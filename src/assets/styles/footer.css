@@ -1,48 +1,51 @@
 .footer-parent {
-    background-color: #1a2a53;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
+  background-color: #1a2a53;
 }
 
 .footer-container {
-    
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    background-color: #1a2a53;
-    color: #ffffff;
-    max-width: 1300px;
-    div {
-        margin: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #1a2a53;
+  color: #ffffff;
+  max-width: 1300px;
+  gap: 10px 20px;
+  div {
+    margin: 10px;
 
-        p {
-            margin-bottom: 20px;
-            line-height: 1.5em;
-        }
+    p {
+      font-weight: inherit;
+      margin-bottom: 20px;
+      line-height: 1.5em;
     }
+  }
 }
 
 .footer-follow {
-    ul {
-        list-style: none;
-        padding: 0;
+  ul {
+    list-style: none;
+    padding: 0;
 
-        a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+    a {
+      color: #ffffff;
     }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .footer-50 {
-    width: 50%;
+  width: 50%;
 }
 
 .footer-25 {
-    width: 25%;
+  width: 25%;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 0;
+  }
 }

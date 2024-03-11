@@ -1,27 +1,28 @@
-import React from 'react';
+import React from "react";
+import "../assets/styles/hero.css";
 
 const Hero = () => {
-    return (
-        <section className="hero">
+  return (
+    <section className="hero-container">
+      <img src={require("../assets/images/bil-cropped.jpg")} />
 
-        <div className="hero-content">
-        
-           <h1 className="hero-title">
-                Discover the World
-           </h1>
-             
-           <h2 className="hero-subtitle">
-                We offer the best adventure holidays and tailor-made trips!
-           </h2>
-             
-           <button type="button" className="hero-button" onClick="#">
-                Search for tours &raquo;
-           </button>
-        
+      <article className="text-container">
+        <div className="hero-title">
+          <h1>Where can I get some?</h1>
         </div>
-    
+        <div className="hero-paragraph">
+          <p>
+            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry. Lorem Ipsum has been the
+            industrys standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled it to make a type
+            specimen book.
+          </p>
+        </div>
+        <div className="hero-container-ending"></div>
+      </article>
     </section>
- );
+  );
 };
 
 export default Hero;
