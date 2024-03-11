@@ -1,7 +1,3 @@
-header {
-  margin-top: 10px;
-}
-
 .nav {
   width: auto;
   background-color: #ece7e5;
@@ -38,9 +34,12 @@ header {
   font-size: 20px;
 }
 
-.nav.sticky {
-  position: sticky;
+.sticky-navbar {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  animation: mymove 1s ease-in-out;
 }
 
 .hover-underline::after {
