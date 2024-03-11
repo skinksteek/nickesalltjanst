@@ -9,10 +9,12 @@
   background-color: #1a2a53;
   color: #ffffff;
   max-width: 1300px;
+  gap: 10px 20px;
   div {
     margin: 10px;
 
     p {
+      font-weight: inherit;
       margin-bottom: 20px;
       line-height: 1.5em;
     }
@@ -25,7 +27,6 @@
     padding: 0;
 
     a {
-      text-decoration: none;
       color: #ffffff;
     }
     a:hover {
@@ -40,4 +41,11 @@
 
 .footer-25 {
   width: 25%;
+}
+
+@media screen and (max-width: 480px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 0;
+  }
 }

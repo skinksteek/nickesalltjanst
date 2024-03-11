@@ -38,6 +38,11 @@ header {
   font-size: 20px;
 }
 
+.nav.sticky {
+  position: sticky;
+  top: 0;
+}
+
 .hover-underline::after {
   background: none repeat scroll 0 0 transparent;
   bottom: -4;
@@ -84,13 +89,12 @@ header {
 */
 /* MEDIA QUERIES */
 
-/*
 @media (min-width: 320px) {
   .nav {
-    background-color: #ece7e5;
+    justify-content: space-around;
   }
 }
-*/
+
 @media (min-width: 480px) {
   .nav {
     justify-content: space-between;

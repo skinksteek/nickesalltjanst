@@ -8,7 +8,17 @@ class Navbar extends Component {
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
-
+  /*
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 200);
+      console.log(window.scrollY);)
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  
+*/
   render() {
     return (
       <header>

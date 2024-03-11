@@ -27,8 +27,18 @@
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
-  "react/jsx-uses-react": "off",
-  "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
+      "react/jsx-uses-react": "off",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      ]
     }
   },
   "browserslist": {
@@ -44,6 +54,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.23.10",
+    "@babel/preset-react": "^7.23.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2"
   }
 }
