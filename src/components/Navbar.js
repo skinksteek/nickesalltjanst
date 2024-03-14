@@ -1,6 +1,7 @@
 import "../assets/styles/navbar.css";
 import "../assets/styles/styles.css";
 import React, { useState, useEffect } from "react";
+import logoTrans from "../assets/images/logo-trans.png";
 
 export default function Navbar() {
   const [clicked, setClicked] = useState(false);
@@ -20,10 +21,7 @@ export default function Navbar() {
       <nav className="nav">
         <div className="">
           <a id="logo" href="/hem">
-            <img
-              src={require("../assets/images/logo-trans.png")}
-              alt="Nickesalltjänst"
-            />
+            <img src={logoTrans} alt="Nickesalltjänst" />
           </a>
         </div>
 

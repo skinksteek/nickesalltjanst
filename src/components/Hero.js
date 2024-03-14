@@ -1,10 +1,11 @@
 import React from "react";
 import "../assets/styles/hero.css";
+import bilCropped from "../assets/images/bil-cropped.jpg";
 
 const Hero = () => {
   return (
     <section className="hero-container">
-      <img src={require("../assets/images/bil-cropped.jpg")} />
+      <img src={bilCropped} />
 
       <article className="text-container">
         <div className="hero-title">

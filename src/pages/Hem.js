@@ -1,11 +1,13 @@
 import React from "react";
 import "../assets/styles/hem.css";
 import Hero from "../components/Hero";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
     <div>
       <Hero />
+      <Carousel />
       <div className="p-container">
         <p>
           What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
