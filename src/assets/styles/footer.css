@@ -1,12 +1,12 @@
 .footer-parent {
-  background-color: #1a2a53;
+  background-color: var(--lightgrey);
 }
 
 .footer-container {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  background-color: #1a2a53;
+  background-color: var(--lightgrey);
   color: #ffffff;
   max-width: 1300px;
   gap: 10px 20px;

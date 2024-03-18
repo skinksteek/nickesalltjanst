@@ -1,6 +1,14 @@
+:root {
+  --grey: #2c2d34;
+  --lightgrey: #393e46;
+  --yellow: #efd510;
+  --white: #fff;
+}
+
 body {
   margin: 0;
-  background-color: #ece7e5;
+  background-color: var(--grey);
+  color: var(--white);
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) {

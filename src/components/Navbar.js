@@ -1,7 +1,7 @@
 import "../assets/styles/navbar.css";
 import "../assets/styles/styles.css";
 import React, { useState, useEffect } from "react";
-import logoTrans from "../assets/images/logo-trans.png";
+import logoTrans from "../assets/images/logo-trans-yellow.png";
 
 export default function Navbar() {
   const [clicked, setClicked] = useState(false);

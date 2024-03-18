@@ -1,6 +1,6 @@
 .nav {
   width: auto;
-  background-color: #ece7e5;
+  background-color: var(--grey);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,7 @@
 
 .nav img {
   width: 150px;
+  margin-top: 10px;
   margin-right: 4vh;
 }
 
@@ -30,7 +31,7 @@
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #1a2a53;
+  color: var(--white);
   font-size: 20px;
 }
 
@@ -40,6 +41,7 @@
   left: 0;
   right: 0;
   animation: mymove 1s ease-in-out;
+  z-index: 2;
 }
 
 .hover-underline::after {
@@ -50,7 +52,7 @@
   height: 2.5px;
   left: 50%;
   position: absolute;
-  background: #ee7203;
+  background: var(--yellow);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -65,7 +67,7 @@
 }
 
 #mobile i {
-  color: #1a2a53;
+  color: var(--yellow);
 }
 
 .dark-overlay {
