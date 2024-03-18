@@ -6,7 +6,25 @@ import "../assets/styles/carousel.css";
 
 function PhotoSlider() {
   return (
-    <Carousel className="carousel-container" interval={3000}>
+    <Carousel
+      className="carousel-container"
+      interval={3000}
+      indicatorIconButtonProps={{
+        style: {
+          padding: "5px",
+        },
+      }}
+      activeIndicatorIconButtonProps={{
+        style: {
+          color: "var(--yellow)",
+        },
+      }}
+      indicatorContainerProps={{
+        style: {
+          marginTop: "5px",
+        },
+      }}
+    >
       {data.map((item) => (
         <Item key={item.id} item={item} />
       ))}

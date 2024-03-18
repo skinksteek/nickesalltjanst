@@ -5,11 +5,19 @@ import "../assets/styles/carousel.css";
 
 function Item({ item }) {
   return (
-    <Paper>
+    <Paper
+      className="carousel-paper"
+      style={{
+        backgroundColor: "var(--lightgrey)",
+      }}
+      elevation={5}
+    >
       <img src={item.image} alt={item.title} className="carousel-img"></img>
-      <h2>{item.title}</h2>
+      <article>
+        <h2>{item.title}</h2>
+      </article>
 
-      <Button className="CheckButton">Läs mer</Button>
+      <Button className="paper-button">Läs mer</Button>
     </Paper>
   );
 }
