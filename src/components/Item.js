@@ -1,6 +1,8 @@
 import React from "react";
-import { Paper, Button } from "@mui/material";
+import { Paper } from "@mui/material";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/carousel.css";
 
 function Item({ item }) {
@@ -8,16 +10,20 @@ function Item({ item }) {
     <Paper
       className="carousel-paper"
       style={{
-        backgroundColor: "var(--lightgrey)",
+        backgroundImage: `url(${item.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
       elevation={5}
     >
-      <img src={item.image} alt={item.title} className="carousel-img"></img>
-      <article>
+      <div className="featured-content">
         <h2>{item.title}</h2>
-      </article>
-
-      <Button className="paper-button">Läs mer</Button>
+        <a>
+          <span>
+            <FontAwesomeIcon icon={faChevronRight} size="l" fixedWidth />
+          </span>
+        </a>
+      </div>
     </Paper>
   );
 }

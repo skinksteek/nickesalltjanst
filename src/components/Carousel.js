@@ -8,7 +8,7 @@ function PhotoSlider() {
   return (
     <Carousel
       className="carousel-container"
-      interval={3000}
+      interval={1000000}
       indicatorIconButtonProps={{
         style: {
           padding: "5px",
@@ -24,6 +24,7 @@ function PhotoSlider() {
           marginTop: "5px",
         },
       }}
+      animation="slide"
     >
       {data.map((item) => (
         <Item key={item.id} item={item} />
