@@ -8,7 +8,7 @@ function PhotoSlider() {
   return (
     <Carousel
       className="carousel-container"
-      interval={1000000}
+      interval={4000}
       indicatorIconButtonProps={{
         style: {
           padding: "5px",
