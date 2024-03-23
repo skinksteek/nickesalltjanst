@@ -1,11 +1,39 @@
 .carousel-container {
+  position: relative;
   margin: 0 auto;
-  width: 50vh;
+  max-width: 500px;
 }
 
-.carousel-img {
-  height: 45vh;
+.carousel-paper {
+  max-width: 100%;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.featured-content {
   width: 100%;
-  object-fit: contain;
-  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+
+  h2 {
+    padding-left: 1vh;
+    font-size: 16px;
+    color: var(--white);
+    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black,
+      0 -0.07em black;
+  }
+
+  a {
+    background: var(--lightgrey);
+    color: var(--yellow);
+    padding: 12px 12px 6px 12px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }

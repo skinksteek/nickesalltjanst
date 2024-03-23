@@ -1,15 +1,29 @@
 import React from "react";
-import { Paper, Button } from "@mui/material";
+import { Paper } from "@mui/material";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/carousel.css";
 
 function Item({ item }) {
   return (
-    <Paper>
-      <img src={item.image} alt={item.title} className="carousel-img"></img>
-      <h2>{item.title}</h2>
-
-      <Button className="CheckButton">Läs mer</Button>
+    <Paper
+      className="carousel-paper"
+      style={{
+        backgroundImage: `url(${item.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      elevation={5}
+    >
+      <div className="featured-content">
+        <h2>{item.title}</h2>
+        <a>
+          <span>
+            <FontAwesomeIcon icon={faChevronRight} size="l" fixedWidth />
+          </span>
+        </a>
+      </div>
     </Paper>
   );
 }
