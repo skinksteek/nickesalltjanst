@@ -50,15 +50,33 @@ const Inputs = () => {
       <div className="options-wrapper">
         <div className="custom-select">
           <select name="jobb" id="lang">
-            <option value="select">Välj jobb</option>
-            <option value="javascript">Dränering</option>
-            <option value="php">Asfalt</option>
-            <option value="java">Grus</option>
-            <option value="golang">Gräs</option>
-            <option value="python">Bus</option>
-            <option value="c#">Fräs</option>
-            <option value="C++">Plast</option>
-            <option value="erlang">Snus</option>
+            <option className="option-color" value="select">
+              Välj jobb
+            </option>
+            <option className="option-color" value="javascript">
+              Dränering
+            </option>
+            <option className="option-color" value="php">
+              Asfalt
+            </option>
+            <option className="option-color" value="java">
+              Grus
+            </option>
+            <option className="option-color" value="golang">
+              Gräs
+            </option>
+            <option className="option-color" value="python">
+              Bus
+            </option>
+            <option className="option-color" value="c#">
+              Fräs
+            </option>
+            <option className="option-color" value="C++">
+              Plast
+            </option>
+            <option className="option-color" value="erlang">
+              Snus
+            </option>
           </select>
         </div>
         <textarea placeholder="Övrig information" cols="50" rows="10" />

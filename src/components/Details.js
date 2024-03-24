@@ -1,11 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faSquareInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import "../assets/styles/contact/details.css";
 
 const Details = () => {
@@ -21,17 +17,40 @@ const Details = () => {
       <div className="contact">
         <div className="phone">
           <FontAwesomeIcon icon={faPhone} size="xl" />
-          <p>+46 70 278 58 81</p>
+          <p>+46 76-327 71 17</p>
         </div>
         <div className="email">
           <FontAwesomeIcon icon={faEnvelope} size="xl" />
-          <p>linusigelstrom@gmail.com</p>
+          <p>alltjanstnicke@hotmail.com</p>
         </div>
       </div>
       <div className="socials">
-        <FontAwesomeIcon icon={faFacebook} size="2xl" />
-        <FontAwesomeIcon icon={faSquareInstagram} size="2xl" />
-        <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+        <a
+          id="facebook"
+          href="https://www.facebook.com/profile.php?id=100076329215498"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={faFacebook} size="2xl" />
+        </a>
+
+        <div className="wrapper">
+          <a
+            id="instagram"
+            href="https://instagram.com/"
+            target="_instagram"
+            aria-label="A great place to find out what friends are up to!"
+          >
+            <div className="bg">
+              <div className="inner">
+                <i className="fab fa-instagram" size="2xl"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <a id="linkedin" href="#" target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faLinkedinIn} size="2xl" />
+        </a>
       </div>
     </section>
   );

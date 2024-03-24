@@ -6,7 +6,10 @@ import Carousel from "../components/Carousel";
 export default function Home() {
   return (
     <div>
-      <Hero />
+      <Hero
+        text="Allt mellan himmel och jord"
+        bread="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour."
+      />
       <Carousel />
       <div className="p-container">
         <p>

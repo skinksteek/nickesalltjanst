@@ -24,14 +24,14 @@ const Footer = () => {
           <p>
             Nickesalltjänst AB
             <br></br>
-            Åbyvägen 4B
+            Kyrkogatan 12
             <br></br>
-            431 62 Mölndal
+            688 30 Storfors
             <br></br>
             <br></br>
-            070-278 58 81
+            +46 76-327 71 17
             <br></br>
-            info@nickesalltjanst.se
+            alltjanstnicke@hotmail.com
           </p>
         </div>
         <div className="footer-follow footer-25">
@@ -44,7 +44,13 @@ const Footer = () => {
             </li>
             <br></br>
             <li>
-              <a href="#">Facebook</a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100076329215498"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
             </li>
             <br></br>
             <li>

@@ -98,6 +98,10 @@ select {
   border-radius: 0.25rem;
   color: var(--verylightgrey);
   cursor: pointer;
+
+  .option-color {
+    color: var(--grey);
+  }
 }
 
 .custom-select::before,
@@ -124,6 +128,7 @@ select {
 }
 
 textarea {
+  border-color: var(--verylightgrey);
   margin-top: 2vh;
   background: transparent;
   width: 350px;
@@ -133,4 +138,8 @@ textarea {
   border-radius: 5px;
   resize: vertical;
   color: var(--white);
+
+  &::placeholder {
+    color: var(--verylightgrey);
+  }
 }
