@@ -35,7 +35,7 @@ const Inputs = () => {
         <p>Meddelande</p>
         <textarea placeholder="Remember, be nice!" cols="50" rows="10" />
       </div>
-      <button type="submit" value="Skicka meddelande">
+      <button className="form-button" type="submit" value="Skicka meddelande">
         Skicka
       </button>
     </form>
