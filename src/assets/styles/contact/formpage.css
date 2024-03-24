@@ -1,0 +1,30 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  align-items: center;
+  background-color: var(--lightgrey);
+  padding-bottom: 50px;
+  margin-bottom: 5vh;
+}
+
+.page-heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.form-container {
+  width: 70%;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  height: 70vh;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}
+
+.contact-wrapper {
+  display: flex;
+}

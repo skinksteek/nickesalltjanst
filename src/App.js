@@ -8,6 +8,7 @@ import Kontakt from "./pages/Kontakt";
 import NoPage from "./pages/NoPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SuccessPage from "./pages/SuccessPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/om" element={<Om />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="*" element={<NoPage />} />
+            <Route path="/success" element={<SuccessPage />} />
           </Routes>
         </BrowserRouter>
       </div>
