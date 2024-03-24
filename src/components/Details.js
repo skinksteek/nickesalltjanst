@@ -10,7 +10,7 @@ import "../assets/styles/contact/details.css";
 
 const Details = () => {
   return (
-    <section>
+    <section className="details-wrapper">
       <article>
         <h2>Kontakt information</h2>
         <p>
@@ -19,11 +19,11 @@ const Details = () => {
         </p>
       </article>
       <div className="contact">
-        <div>
+        <div className="phone">
           <FontAwesomeIcon icon={faPhone} size="xl" />
           <p>+46 70 278 58 81</p>
         </div>
-        <div>
+        <div className="email">
           <FontAwesomeIcon icon={faEnvelope} size="xl" />
           <p>linusigelstrom@gmail.com</p>
         </div>

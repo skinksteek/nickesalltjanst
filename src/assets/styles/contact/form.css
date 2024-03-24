@@ -8,31 +8,129 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+form {
+  margin-left: 5vh;
+  padding: 20px;
+}
+
 .button-holder {
   margin-top: 5vh;
   display: flex;
 }
 
-select {
-  background-color: lightgray;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
   width: 100%;
-  padding: 10px;
-  border-radius: 4px;
 }
 
-input {
-  background-color: lightgray;
+.form__field {
+  font-family: inherit;
   width: 100%;
-  padding: 10px;
-  border-radius: 4px;
+  border: 0;
+  border-bottom: 2px solid var(--verylightgrey);
+  outline: 0;
+  font-size: 1.15rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  padding-left: 0.3125em;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.15rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--verylightgrey);
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--yellow), #aeee19);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+.options-wrapper {
+  margin-top: 2vh;
+}
+
+.custom-select {
+  min-width: 350px;
+  position: relative;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 0.3125em;
+  background: transparent;
+  border: 1px solid var(--verylightgrey);
+  border-radius: 0.25rem;
+  color: var(--verylightgrey);
+  cursor: pointer;
+}
+
+.custom-select::before,
+.custom-select::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid var(--verylightgrey);
+  top: 40%;
+}
+
+.custom-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid var(--verylightgrey);
+  top: 55%;
 }
 
 textarea {
-  background-color: lightgray;
+  margin-top: 2vh;
+  background: transparent;
   width: 350px;
-  height: 200px;
-  padding: 10px 5px;
+  max-height: 500px;
+  padding: 15px 10px;
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 5px;
   resize: vertical;
+  color: var(--white);
 }

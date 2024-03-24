@@ -8,21 +8,47 @@ const Inputs = () => {
   };
   return (
     <form>
-      <div>
-        <p>Namn</p>
-        <input type="text" placeholder="Allen Jones" />
+      <div className="form__group field">
+        <input
+          type="input"
+          className="form__field"
+          placeholder="Name"
+          name="name"
+          id="name"
+          required
+        />
+        <label htmlFor="name" className="form__label">
+          Namn
+        </label>
       </div>
-      <div>
-        <p>Email</p>
-        <input type="email" placeholder="aljay126@gmail.com" />
+      <div className="form__group field">
+        <input
+          type="input"
+          className="form__field"
+          placeholder="E-post"
+          name="E-post"
+          id="E-post"
+          required
+        />
+        <label htmlFor="E-post" className="form__label">
+          E-post
+        </label>
       </div>
-      <div>
-        <p>Telefonnummer</p>
-        <input type="number" placeholder="+46702785881" />
+      <div className="form__group field">
+        <input
+          type="input"
+          className="form__field"
+          placeholder="Telefonnummer"
+          name="Telefonnummer"
+          id="Telefonnummer"
+          required
+        />
+        <label htmlFor="Telefonnummer" className="form__label">
+          Telefonnummer
+        </label>
       </div>
-      <div>
-        <div>
-          <label htmlFor="lang">Typ av jobb</label>
+      <div className="options-wrapper">
+        <div className="custom-select">
           <select name="jobb" id="lang">
             <option value="select">Välj jobb</option>
             <option value="javascript">Dränering</option>
@@ -35,8 +61,7 @@ const Inputs = () => {
             <option value="erlang">Snus</option>
           </select>
         </div>
-        <p>Meddelande</p>
-        <textarea placeholder="Remember, be nice!" cols="50" rows="10" />
+        <textarea placeholder="Övrig information" cols="50" rows="10" />
       </div>
       <div className="button-holder">
         <Button text="Skicka" onClick={handleClick} />

@@ -17,7 +17,7 @@ a {
   left: 0;
   display: block;
   border-radius: 28px;
-  background: #efd510ab;
+  background: var(--yellow);
   width: 56px;
   height: 56px;
   transition: all 0.3s ease;

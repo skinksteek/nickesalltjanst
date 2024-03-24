@@ -1,0 +1,43 @@
+.details-wrapper {
+  height: 740px;
+  text-align: center;
+  background-color: var(--lightgrey);
+  margin-right: 5vh;
+  padding: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin-left: 1vh;
+  }
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin-left: 1vh;
+  }
+}
+
+.socials {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 35vh;
+}
