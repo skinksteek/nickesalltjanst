@@ -1,7 +1,11 @@
 import React from "react";
 import "../assets/styles/contact/form.css";
+import Button from "./Button";
 
 const Inputs = () => {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
   return (
     <form>
       <div>
@@ -31,13 +35,12 @@ const Inputs = () => {
             <option value="erlang">Snus</option>
           </select>
         </div>
-
         <p>Meddelande</p>
         <textarea placeholder="Remember, be nice!" cols="50" rows="10" />
       </div>
-      <button className="form-button" type="submit" value="Skicka meddelande">
-        Skicka
-      </button>
+      <div className="button-holder">
+        <Button text="Skicka" onClick={handleClick} />
+      </div>
     </form>
   );
 };

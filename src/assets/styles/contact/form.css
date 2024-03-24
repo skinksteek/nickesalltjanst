@@ -8,20 +8,9 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.form-button {
-  background-color: var(--yellow);
-  width: 180px;
-  display: block;
-  margin: 0 auto;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  color: #111;
-  margin-top: 30px;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
+.button-holder {
+  margin-top: 5vh;
+  display: flex;
 }
 
 select {
