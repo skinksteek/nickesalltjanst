@@ -137,7 +137,7 @@
     right: -800px;
     width: 65%;
     height: 100vh;
-    background-color: #d9d5d3;
+    background-color: var(--grey);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);

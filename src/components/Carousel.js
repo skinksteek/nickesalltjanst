@@ -6,30 +6,32 @@ import "../assets/styles/carousel.css";
 
 function PhotoSlider() {
   return (
-    <Carousel
-      className="carousel-container"
-      interval={4000}
-      indicatorIconButtonProps={{
-        style: {
-          padding: "5px",
-        },
-      }}
-      activeIndicatorIconButtonProps={{
-        style: {
-          color: "var(--yellow)",
-        },
-      }}
-      indicatorContainerProps={{
-        style: {
-          marginTop: "5px",
-        },
-      }}
-      animation="slide"
-    >
-      {data.map((item) => (
-        <Item key={item.id} item={item} />
-      ))}
-    </Carousel>
+    <div className="carousel-wrapper">
+      <Carousel
+        className="carousel-container"
+        interval={4000}
+        indicatorIconButtonProps={{
+          style: {
+            padding: "5px",
+          },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: {
+            color: "var(--yellow)",
+          },
+        }}
+        indicatorContainerProps={{
+          style: {
+            marginTop: "5px",
+          },
+        }}
+        animation="slide"
+      >
+        {data.map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
+      </Carousel>
+    </div>
   );
 }
 

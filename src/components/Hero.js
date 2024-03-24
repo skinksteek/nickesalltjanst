@@ -20,7 +20,6 @@ const Hero = () => {
             specimen book.
           </p>
         </div>
-        <div className="hero-container-ending"></div>
       </article>
     </section>
   );

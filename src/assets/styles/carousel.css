@@ -4,6 +4,10 @@
   max-width: 500px;
 }
 
+.carousel-wrapper {
+  margin-top: 5vh;
+}
+
 .carousel-paper {
   max-width: 100%;
   position: relative;
