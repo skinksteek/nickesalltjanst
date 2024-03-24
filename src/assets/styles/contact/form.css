@@ -1,0 +1,49 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  background-color: var(--yellow);
+  width: 180px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #111;
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+select {
+  background-color: lightgray;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+input {
+  background-color: lightgray;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+textarea {
+  background-color: lightgray;
+  width: 350px;
+  height: 200px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: vertical;
+}
