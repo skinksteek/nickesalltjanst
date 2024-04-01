@@ -33,8 +33,13 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a className="hover-underline" href="/nyheter">
-                Nyheter
+              <a className="hover-underline" href="/tjanster">
+                Tjänster
+              </a>
+            </li>
+            <li>
+              <a className="hover-underline" href="/galleri">
+                Galleri
               </a>
             </li>
             <li>

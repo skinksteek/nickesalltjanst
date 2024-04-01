@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function News() {
+export default function Services() {
   return (
     <div>
-      <h2>Nyheter</h2>
+      <h2>Tjänster</h2>
     </div>
   );
 }
