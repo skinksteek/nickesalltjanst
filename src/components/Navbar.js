@@ -38,11 +38,6 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a className="hover-underline" href="/galleri">
-                Galleri
-              </a>
-            </li>
-            <li>
               <a className="hover-underline" href="/om">
                 Om
               </a>
