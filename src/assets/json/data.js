@@ -21,7 +21,7 @@ export const data = [
     id: 4,
     image: require("../images/pro-oPTOJPx4.jpeg"),
     title: "Plantering och borttagning",
-    bread: "av häckar och buskar",
+    bread: "Av häckar, buskar mm.",
   },
   {
     id: 5,

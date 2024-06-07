@@ -9,10 +9,7 @@ import { CardActionArea } from "@mui/material";
 export default function Cards({ item }) {
   return (
     <div>
-      <Card
-        sx={{ maxWidth: 345 }}
-        style={{ backgroundColor: "var(--lightgrey)" }}
-      >
+      <Card sx={{ Width: 500 }} style={{ backgroundColor: "var(--lightgrey)" }}>
         <CardActionArea>
           <CardMedia
             component="img"
