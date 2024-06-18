@@ -28,10 +28,11 @@ const Footer = () => {
             <br></br>
             688 30 Storfors
             <br></br>
-            <br></br>
-            +46 76-327 71 17
-            <br></br>
-            alltjanstnicke@hotmail.com
+            <p>
+              +46 76-327 71 17
+              <br></br>
+              alltjanstnicke@hotmail.com
+            </p>
           </p>
         </div>
         <div className="footer-follow footer-25">
