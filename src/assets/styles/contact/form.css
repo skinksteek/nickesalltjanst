@@ -143,3 +143,8 @@ textarea {
     color: var(--verylightgrey);
   }
 }
+.error-message {
+  color: red;
+  font-size: 14px; /* Justera storleken efter behov */
+  margin-top: 5px; /* Justera avståndet efter behov */
+}
