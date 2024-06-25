@@ -28,3 +28,9 @@
   display: flex;
   padding: 2vh;
 }
+
+@media screen and (max-width: 950px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}

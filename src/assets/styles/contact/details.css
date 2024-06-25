@@ -57,3 +57,14 @@
 #linkedin:hover {
   color: #0077b5;
 }
+
+@media screen and (max-width: 950px) {
+  .details-wrapper {
+    width: 400px;
+    margin: 0;
+    height: 500px;
+  }
+  .socials {
+    padding-top: 10vh;
+  }
+}

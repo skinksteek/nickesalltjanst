@@ -16,6 +16,7 @@ form {
 .button-holder {
   margin-top: 5vh;
   display: flex;
+  justify-content: center;
 }
 
 .form__group {
@@ -131,7 +132,7 @@ textarea {
   border-color: var(--verylightgrey);
   margin-top: 2vh;
   background: transparent;
-  width: 350px;
+  width: 100%;
   max-height: 500px;
   padding: 15px 10px;
   box-sizing: border-box;
@@ -147,4 +148,10 @@ textarea {
   color: red;
   font-size: 14px; /* Justera storleken efter behov */
   margin-top: 5px; /* Justera avståndet efter behov */
+}
+
+@media screen and (max-width: 950px) {
+  form {
+    margin: 0;
+  }
 }

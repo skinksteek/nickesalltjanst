@@ -144,32 +144,47 @@ const Inputs = () => {
             onChange={handleChange}
             required
           >
-            <option className="option-color" value="">
+            <option value="" disabled selected>
               Välj jobb
+            </option>
+            <option className="option-color" value="Vatten och avlopp">
+              Vatten och avlopp
             </option>
             <option className="option-color" value="Dränering">
               Dränering
             </option>
-            <option className="option-color" value="Asfalt">
-              Asfalt
+            <option className="option-color" value="Plattsättning">
+              Plattsättning
             </option>
-            <option className="option-color" value="Grus">
-              Grus
+            <option className="option-color" value="Plantering och borttagning">
+              Plantering och borttagning
             </option>
-            <option className="option-color" value="Gräs">
-              Gräs
+            <option className="option-color" value="Mindre husgrunder">
+              Mindre husgrunder
             </option>
-            <option className="option-color" value="Bus">
-              Bus
+            <option className="option-color" value="Grustransporter">
+              Grustransporter
             </option>
-            <option className="option-color" value="Fräs">
-              Fräs
+            <option className="option-color" value="Skräp och riscontainer">
+              Skräp och riscontainer
             </option>
-            <option className="option-color" value="Plast">
-              Plast
+            <option
+              className="option-color"
+              value="Krantransporter med lastbil"
+            >
+              Krantransporter med lastbil
             </option>
-            <option className="option-color" value="Snus">
-              Snus
+            <option className="option-color" value="Bilreparationer">
+              Bilreparationer
+            </option>
+            <option className="option-color" value="Däckförsäljning">
+              Däckförsäljning
+            </option>
+            <option
+              className="option-color"
+              value="Mindre snickeri och byggprojekt"
+            >
+              Mindre snickeri och byggprojekt
             </option>
           </select>
         </div>
