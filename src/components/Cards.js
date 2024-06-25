@@ -10,7 +10,7 @@ export default function Cards({ item }) {
   return (
     <div>
       <Card sx={{ Width: 500 }} style={{ backgroundColor: "var(--lightgrey)" }}>
-        <CardActionArea>
+        <CardActionArea disableRipple style={{ cursor: "default" }}>
           <CardMedia
             component="img"
             height="250"
