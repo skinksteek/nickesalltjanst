@@ -1,8 +1,6 @@
 import React from "react";
 import { Paper } from "@mui/material";
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/carousel.css";
 
 function Item({ item }) {
@@ -17,12 +15,7 @@ function Item({ item }) {
       elevation={5}
     >
       <div className="featured-content">
-        <h2>{item.title}</h2>
-        <a>
-          <span>
-            <FontAwesomeIcon icon={faChevronRight} size="l" fixedWidth />
-          </span>
-        </a>
+        <p>{item.title}</p>
       </div>
     </Paper>
   );

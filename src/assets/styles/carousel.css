@@ -1,18 +1,25 @@
 .carousel-container {
   position: relative;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 1000px; /* Adjust this to fit three items */
 }
 
 .carousel-wrapper {
-  margin-top: 5vh;
+  margin: 5vh 1vh;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .carousel-paper {
-  max-width: 100%;
+  width: 100%;
   position: relative;
   height: 300px;
   overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
 .featured-content {
@@ -22,22 +29,20 @@
   padding: 0;
   position: absolute;
   bottom: 0;
-  cursor: pointer;
-
-  h2 {
+  background: rgba(0, 0, 0, 0.5);
+  p {
     padding-left: 1vh;
     font-size: 16px;
     color: var(--white);
-    text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black,
-      0 -0.07em black;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex-direction: column; /* Stack items vertically */
   }
 
-  a {
-    background: var(--lightgrey);
-    color: var(--yellow);
-    padding: 12px 12px 6px 12px;
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
+  .carousel-slide > .MuiGrid-item {
+    width: 100%; /* Each item takes full width */
+    padding: 0 10px; /* Optional: Adjust padding */
   }
 }
