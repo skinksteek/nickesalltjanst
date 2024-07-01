@@ -1,6 +1,7 @@
 .nav {
-  position: relative;
-  width: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--grey);
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@
   border-color: var(--verylightgrey);
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  z-index: 2;
 }
 
 .nav img {
@@ -41,7 +43,6 @@
 }
 
 .sticky-navbar {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -83,7 +84,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: 9998;
   transition: 0.4s ease-in-out;
 }
@@ -97,7 +98,7 @@
 
 @media (min-width: 320px) {
   .nav {
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 

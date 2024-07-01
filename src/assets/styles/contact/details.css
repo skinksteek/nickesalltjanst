@@ -60,6 +60,7 @@
 
 @media screen and (max-width: 950px) {
   .details-wrapper {
+    align-self: center;
     width: 400px;
     margin: 0;
     height: 500px;

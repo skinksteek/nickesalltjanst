@@ -34,3 +34,32 @@
     flex-direction: column;
   }
 }
+
+.message-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.message-box p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.message-box button {
+  padding: 10px 20px;
+  background-color: var(--yellow);
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-box button:hover {
+  background-color: #e6c200;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

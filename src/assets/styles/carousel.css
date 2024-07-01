@@ -1,7 +1,7 @@
 .carousel-container {
   position: relative;
   margin: 0 auto;
-  max-width: 1000px; /* Adjust this to fit three items */
+  max-width: 100%;
 }
 
 .carousel-wrapper {

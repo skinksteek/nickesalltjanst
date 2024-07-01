@@ -134,11 +134,12 @@ textarea {
   background: transparent;
   width: 100%;
   max-height: 500px;
-  padding: 15px 10px;
+  padding: 15px 15px 10px 5px;
   box-sizing: border-box;
   border-radius: 5px;
   resize: vertical;
   color: var(--white);
+  font-size: 1.15rem;
 
   &::placeholder {
     color: var(--verylightgrey);
@@ -146,12 +147,40 @@ textarea {
 }
 .error-message {
   color: red;
-  font-size: 14px; /* Justera storleken efter behov */
-  margin-top: 5px; /* Justera avståndet efter behov */
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 950px) {
   form {
     margin: 0;
   }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+.error-border {
+  border-color: red;
 }
