@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Details from "./Details";
 import Inputs from "./Inputs";
 import "../assets/styles/contact/formpage.css";
+import Button from "./Button";
 
 const ContactForm = () => {
   const [messageSent, setMessageSent] = useState(false);
@@ -18,7 +19,7 @@ const ContactForm = () => {
         {messageSent && (
           <div className="message-box">
             <p>Meddelande skickat!</p>
-            <button onClick={() => setMessageSent(false)}>Close</button>
+            <Button onClick={() => setMessageSent(false)} text="Stäng" />
           </div>
         )}
       </div>
