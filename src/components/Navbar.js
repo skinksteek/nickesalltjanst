@@ -21,7 +21,11 @@ export default function Navbar() {
       <nav className="nav">
         <div className="">
           <a id="logo" href="/hem">
-            <img src={logoTrans} alt="Nickesalltjänst" />
+            <img
+              src={logoTrans}
+              alt="Nickesalltjänst"
+              title="Gå till startsidan"
+            />
           </a>
         </div>
 
