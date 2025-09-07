@@ -1,4 +1,3 @@
-import React from "react";
 import "../assets/styles/hero.css";
 import bilCropped from "../assets/images/bil-cropped.jpg";
 import PropTypes from "prop-types";

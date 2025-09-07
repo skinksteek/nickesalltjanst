@@ -1,6 +1,6 @@
 import "../assets/styles/navbar.css";
 import "../assets/styles/styles.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import logoTrans from "../assets/images/logo-trans-yellow-white.png";
 
 export default function Navbar() {

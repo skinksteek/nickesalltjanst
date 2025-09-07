@@ -1,4 +1,3 @@
-import React from "react";
 import "../assets/styles/hem.css";
 import Hero from "../components/Hero";
 import Carousel from "../components/Carousel";

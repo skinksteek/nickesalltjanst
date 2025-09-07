@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from "react";
 import "./assets/styles/styles.css";
 import Hem from "./pages/Hem";
 import Services from "./pages/Services";

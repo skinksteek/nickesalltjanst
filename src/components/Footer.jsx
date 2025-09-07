@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-import React from "react";
 import "../assets/styles/footer.css";
 
 const Footer = () => {

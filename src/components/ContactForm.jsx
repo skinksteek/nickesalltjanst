@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Details from "./Details";
 import Inputs from "./Inputs";
 import "../assets/styles/contact/formpage.css";

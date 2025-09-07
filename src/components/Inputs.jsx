@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import "../assets/styles/contact/form.css";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
