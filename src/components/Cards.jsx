@@ -8,7 +8,7 @@ import { CardActionArea } from "@mui/material";
 export default function Cards({ item }) {
   return (
     <div>
-      <Card sx={{ Width: 500 }} style={{ backgroundColor: "var(--lightgrey)" }}>
+      <Card sx={{ Width: 500 }} style={{ backgroundColor: "var(--secondary)" }}>
         <CardActionArea disableRipple style={{ cursor: "default" }}>
           <CardMedia
             component="img"
@@ -16,7 +16,7 @@ export default function Cards({ item }) {
             image={item.image}
             alt={item.title}
           />
-          <CardContent style={{ backgroundColor: "var(--lightgrey)" }}>
+          <CardContent style={{ backgroundColor: "var(--secondary)" }}>
             <Typography
               gutterBottom
               variant="h2"
