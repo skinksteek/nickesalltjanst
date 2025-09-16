@@ -1,15 +1,16 @@
 :root {
-  --grey: #2c2d34;
-  --lightgrey: #393e46;
-  --yellow: #efd510;
+  --main: #21211b;
+  --secondary: #2b2b24;
+  --yellow: #ffea00;
   --white: #fff;
   --verylightgrey: #bababa;
+  --bread: #eaeae4;
+  --header: #ffffff;
 }
 
 body {
   margin: 0;
-  background-color: var(--grey);
-  color: var(--white);
+  background-color: var(--main);
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
@@ -17,16 +18,25 @@ body {
     height: 200vh;
   }
 }
-
+h1,
+h2 {
+  color: var(--header);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2;
+}
+p {
+  color: var(--bread);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
 * {
   box-sizing: border-box;
   text-size-adjust: 100%;
-  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
 .main-content {
   max-width: 1300px;
   padding: 0;
-  margin: 8vh auto 0;
+  margin: 1vh auto 0;
 }
