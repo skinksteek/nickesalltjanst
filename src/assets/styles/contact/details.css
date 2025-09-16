@@ -17,7 +17,6 @@
   align-items: center;
   justify-content: center;
   color: var(--bread);
-
   p {
     margin-left: 1vh;
   }
@@ -42,12 +41,22 @@
   color: var(--bread);
 }
 
-#facebook {
+#facebook,
+#phone,
+#email {
   transition: 0.2s ease-in-out;
 }
-
+#phone:hover {
+  transform: scale(1.1);
+  color: var(--yellow);
+}
+#email:hover {
+  transform: scale(1.1);
+  color: var(--yellow);
+}
 #facebook:hover {
   color: #4267b2;
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 950px) {

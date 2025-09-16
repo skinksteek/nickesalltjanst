@@ -14,13 +14,17 @@ const Details = () => {
         </p>
       </article>
       <div className="contact">
-        <div className="phone">
+        <div className="phone" id="phone">
           <FontAwesomeIcon icon={faPhone} size="xl" />
-          <p>+46 76-327 71 17</p>
+          <p>
+            <a href="tel:+46 76-327 71 17">+46 76-327 71 17</a>
+          </p>
         </div>
-        <div className="email">
+        <div className="email" id="email">
           <FontAwesomeIcon icon={faEnvelope} size="xl" />
-          <p>alltjanstnicke@hotmail.com</p>
+          <p>
+            <a href="mailto:someone@example.com">alltjanstnicke@hotmail.com</a>
+          </p>
         </div>
       </div>
       <div className="socials">
