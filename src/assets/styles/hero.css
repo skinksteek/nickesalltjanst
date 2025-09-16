@@ -8,12 +8,12 @@
     -moz-border-radius: 5px 5px 5px 5px;
   }
   h1 {
-    color: var(--white);
+    color: var(--header);
     text-transform: none;
     letter-spacing: 0;
     font-size: 60px;
     line-height: 70px;
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 24px;
   }
   h1::after {
@@ -29,8 +29,8 @@
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
+    color: var(--bread);
   }
 
   @media screen and (max-width: 600px) {
