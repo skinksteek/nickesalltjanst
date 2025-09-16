@@ -1,6 +1,5 @@
 import "../assets/styles/hem.css";
 import Hero from "../components/Hero";
-import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
@@ -9,7 +8,6 @@ export default function Home() {
         text="Allt mellan himmel och jord"
         bread="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour."
       />
-      <Carousel />
       <div className="p-container">
         <p>
           What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
