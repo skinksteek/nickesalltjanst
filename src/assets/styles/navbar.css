@@ -22,7 +22,7 @@ nav {
   overflow: visible;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid transparent;
+  /* border-bottom: 1px solid transparent; */
   transition: background 0.25s ease, border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
