@@ -42,15 +42,15 @@
 }
 
 #facebook,
-#phone,
-#email {
+#phone-icon,
+#email-icon {
   transition: 0.2s ease-in-out;
 }
-#phone:hover {
+#phone-icon:hover {
   transform: scale(1.1);
   color: var(--yellow);
 }
-#email:hover {
+#email-icon:hover {
   transform: scale(1.1);
   color: var(--yellow);
 }
