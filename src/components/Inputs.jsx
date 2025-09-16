@@ -251,7 +251,12 @@ const Inputs = ({ onMessageSent }) => {
       ) : (
         <div className="message-box">
           <p>{submissionMessage}</p>
-          <button onClick={() => navigate("/")}>Stäng</button>
+          <button
+            className="button"
+            onClick={() => (window.location.href = "/kontakt")}
+          >
+            Försök igen
+          </button>
         </div>
       )}
     </div>
