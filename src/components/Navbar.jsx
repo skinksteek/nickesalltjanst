@@ -57,7 +57,7 @@ export default function Navbar() {
                 className={`hover-underline ${
                   active === "Hem" ? "active" : ""
                 }`}
-                href="/hem"
+                href="/"
               >
                 Hem
               </a>
