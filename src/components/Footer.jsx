@@ -3,8 +3,8 @@ import "../assets/styles/footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer-parent">
-      <footer className="footer-container">
+    <footer>
+      <div className="footer-content">
         <div className="footer-info footer-50">
           <p>
             <strong>Vår vision</strong>
@@ -58,8 +58,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 
