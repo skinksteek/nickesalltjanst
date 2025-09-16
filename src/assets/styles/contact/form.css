@@ -12,9 +12,9 @@ input[type="number"] {
 form {
   margin-left: 5vh;
   padding: 20px;
+  color-scheme: dark;
 }
-
-.button-holder {
+form .button-holder {
   margin-top: 5vh;
   display: flex;
   justify-content: center;

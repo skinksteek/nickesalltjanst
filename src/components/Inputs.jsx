@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import emailjs from "@emailjs/browser";
 import "../assets/styles/contact/form.css";
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
 
 const Inputs = ({ onMessageSent }) => {
   const [formData, setFormData] = useState({
@@ -19,7 +18,6 @@ const Inputs = ({ onMessageSent }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [invalidFields, setInvalidFields] = useState({});
-  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,7 +44,7 @@ const Inputs = ({ onMessageSent }) => {
     setFormValid(isValid);
 
     if (name === "phone") {
-      const isValidPhone = /^[0-9]*$/.test(value);
+      const isValidPhone = /^\+?\d{7,15}$/.test(value);
       if (!isValidPhone) {
         setPhoneError("Du kan enbart skriva siffror.");
       } else {
@@ -58,7 +56,7 @@ const Inputs = ({ onMessageSent }) => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    const isValidPhone = /^[0-9]*$/.test(formData.phone);
+    const isValidPhone = /^\+?\d{7,15}$/.test(formData.phone);
     const newInvalidFields = {};
 
     if (!formData.name) newInvalidFields.name = true;
@@ -114,7 +112,7 @@ const Inputs = ({ onMessageSent }) => {
             className={`form__group field ${invalidFields.name ? "shake" : ""}`}
           >
             <input
-              type="text"
+              type="name"
               className={`form__field ${
                 invalidFields.name ? "error-border" : ""
               }`}
@@ -124,6 +122,7 @@ const Inputs = ({ onMessageSent }) => {
               value={formData.name}
               onChange={handleChange}
               required
+              autoComplete="name"
             />
             <label htmlFor="name" className="form__label">
               Namn
@@ -145,6 +144,7 @@ const Inputs = ({ onMessageSent }) => {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
             />
             <label htmlFor="email" className="form__label">
               E-post
@@ -165,9 +165,10 @@ const Inputs = ({ onMessageSent }) => {
               id="phone"
               value={formData.phone}
               onChange={handleChange}
-              pattern="[0-9]*"
+              pattern="\\+?[1-9][0-9]{6,14}"
               required
               title="Du kan enbart skriva siffror."
+              autoComplete="tel"
             />
             {phoneError && <p className="error-message">{phoneError}</p>}
             <label htmlFor="phone" className="form__label">
