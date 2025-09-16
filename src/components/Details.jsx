@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../assets/styles/contact/details.css";
 
 const Details = () => {
@@ -31,10 +31,6 @@ const Details = () => {
           rel="noreferrer"
         >
           <FontAwesomeIcon icon={faFacebook} size="2xl" />
-        </a>
-
-        <a id="linkedin" href="#" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faLinkedinIn} size="2xl" />
         </a>
       </div>
     </section>

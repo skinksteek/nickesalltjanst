@@ -5,6 +5,7 @@ input::-webkit-inner-spin-button {
 }
 
 input[type="number"] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 
@@ -32,8 +33,8 @@ form {
   border: 0;
   border-bottom: 2px solid var(--verylightgrey);
   outline: 0;
-  font-size: 1.15rem;
-  color: #fff;
+  font-size: 16px;
+  color: var(--bread);
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -43,7 +44,7 @@ form {
   color: transparent;
 }
 .form__field:placeholder-shown ~ .form__label {
-  font-size: 1.15rem;
+  font-size: 1rem;
   cursor: text;
   top: 20px;
 }
@@ -53,15 +54,14 @@ form {
   top: 0;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
   color: var(--verylightgrey);
 }
 
 .form__field:focus {
   padding-bottom: 6px;
-  font-weight: 700;
+  font-weight: 400;
   border-width: 3px;
-  border-image: linear-gradient(to right, var(--yellow), #aeee19);
+  border-image: linear-gradient(to right, var(--yellow), var(--yellow));
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -69,9 +69,24 @@ form {
   top: 0;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
   color: var(--yellow);
-  font-weight: 700;
+  font-weight: 500;
+}
+
+/* === Autofill fix (Chrome/Safari) === */
+.form__field:-webkit-autofill {
+  -webkit-text-fill-color: var(--bread);
+  caret-color: var(--bread);
+  /* byt var(--mainbg) till din faktiska bakgrundsfärg-variabel */
+  box-shadow: 0 0 0 1000px var(--main) inset;
+  border-color: var(--verylightgrey);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form__field:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px var(--mainbg) inset,
+    0 0 0 3px rgba(245, 158, 11, 0.25);
+  -webkit-text-fill-color: var(--bread);
 }
 
 .form__field:required,
@@ -92,7 +107,7 @@ select {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
-  font-size: 1.15rem;
+  font-size: 1rem;
   padding: 0.675em 6em 0.675em 0.3125em;
   background: transparent;
   border: 1px solid var(--verylightgrey);
@@ -101,7 +116,7 @@ select {
   cursor: pointer;
 
   .option-color {
-    color: var(--grey);
+    color: var(--main);
   }
 }
 
@@ -129,6 +144,7 @@ select {
 }
 
 textarea {
+  font: inherit;
   border-color: var(--verylightgrey);
   margin-top: 2vh;
   background: transparent;
@@ -139,7 +155,6 @@ textarea {
   border-radius: 5px;
   resize: vertical;
   color: var(--white);
-  font-size: 1.15rem;
 
   &::placeholder {
     color: var(--verylightgrey);
