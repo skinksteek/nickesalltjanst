@@ -1,7 +1,7 @@
 export const data = [
   {
     id: 1,
-    image: "/images/pro-3VQIUFO4.jpeg",
+    image: "/images/pro-8mX1gk0K.jpeg",
     title: "Vatten och avlopp",
     bread: "test",
   },
