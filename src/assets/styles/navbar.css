@@ -2,11 +2,11 @@
   --page-width: 1300px;
   --nav-height: 56px;
   --nav-border: rgba(255, 255, 255, 0.08);
-
   /* Logo-skalning */
   --logo-size: 44px; /* Bildens grundhöjd (ej layout) */
   --logo-scale-scrolled: 0.7;
   --logo-scale-desktop: 2;
+  --logo-size: 36px;
 }
 
 .site-header {
@@ -16,7 +16,7 @@
 }
 
 nav {
-  margin-top: 2vh; /* valfritt “andas” lite från toppen */
+  margin-top: 2vh;
   width: 100%;
   height: var(--nav-height);
   overflow: visible;
@@ -27,7 +27,6 @@ nav {
     box-shadow 0.25s ease;
 }
 
-/* Blur & tydligare bakgrund när man scrollar */
 .site-header.is-scrolled nav {
   /* background: hsla(60, 8%, 10%, 0.85);
   /* border-bottom-color: var(--nav-border); */
@@ -65,8 +64,8 @@ nav {
   height: var(--logo-size);
   width: auto;
   display: block;
-  transform-origin: left center; /* växer från vänster kant */
-  transition: transform 0.22s ease; /* mjuk övergång */
+  transform-origin: left center;
+  transition: transform 0.22s ease;
   will-change: transform;
 }
 
@@ -89,12 +88,11 @@ nav {
   }
 }
 
-/* ── Länkar ────────────────────────────── */
 #navbar {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: auto; /* skjut menyn (och CTA) till höger */
+  margin-left: auto;
 }
 
 #navbar li {
@@ -139,7 +137,6 @@ nav {
   transform: scaleX(1);
 }
 
-/* ── CTA (Ring oss) – vänster→höger wipe ─ */
 .cta {
   /* Faller tillbaka till --primary eller en mörk färg om --main saknas */
   --cta-main: var(--main, var(--primary, #1a1a16));
@@ -157,8 +154,7 @@ nav {
   background-size: 0% 100%, 100% 100%;
   background-position: left, left;
   background-repeat: no-repeat;
-
-  color: #111; /* svart text när knappen är gul */
+  color: var(--main);
   font-weight: 700;
   font-size: 14px;
   transition: background-size 0.35s ease, color 0.2s ease, transform 0.15s ease,
@@ -166,10 +162,8 @@ nav {
 }
 
 .cta:hover {
-  /* låt huvudfärgen svepa in från vänster */
   background-size: 100% 100%, 100% 100%;
-  color: var(--yellow); /* gul text/ikon på mörk bakgrund */
-  transform: translateY(-1px);
+  color: var(--yellow);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -202,7 +196,6 @@ nav {
   width: 100%;
 }
 
-/* ── Mobilknapp (hamburgare) ───────────── */
 #mobile {
   display: none;
   margin-left: 8px;
@@ -223,7 +216,6 @@ nav {
 
 /* ── Mobil: drawer + overlay ───────────── */
 @media (max-width: 768px) {
-  /* Justera radlayout: logo vänster, hamburgare höger */
   .cta-desktop {
     display: none !important;
   }
@@ -235,11 +227,6 @@ nav {
     width: calc(100% - 24px);
     margin: 6px 12px 0;
     justify-content: center;
-  }
-
-  /* Mindre logobas men behåller skalsystemet */
-  :root {
-    --logo-size: 36px;
   }
 
   #mobile {
