@@ -1,11 +1,11 @@
 :root {
-  --main: #21211b;
-  --secondary: #2b2b24;
-  --yellow: #ffea00;
-  --white: #fff;
-  --verylightgrey: #bababa;
-  --bread: #eaeae4;
-  --header: #ffffff;
+  --color-bg-primary: #21211b;
+  --color-bg-secondary: #2b2b24;
+  --color-accent: #ffea00;
+  --color-text-heading: #ffffff;
+  --color-border: #bababa;
+  --color-text-body: #eaeae4;
+  --page-width: 1300px;
 }
 
 *,
@@ -29,42 +29,42 @@ html {
   }
 }
 
-/* Kropp */
 body {
   margin: 0;
-  background-color: var(--main);
-  color: var(--bread);
+  background-color: var(--color-bg-primary);
   min-height: 100vh;
   line-height: 1.5;
 }
 
-/* Layoutbegränsning för innehåll */
 .main-content {
-  max-width: 1300px;
+  max-width: var(--page-width);
   margin: 1vh auto 0;
-  padding: 0 1rem; /* små inre marginaler för mobil */
+  overflow-x: hidden;
 }
 
 /* Typografi */
 h1,
 h2 {
-  color: var(--header);
+  color: var(--color-text-heading);
   font-family: "Montserrat", Inter, system-ui, sans-serif;
   line-height: 1.2;
   margin: 0 0 0.5rem 0;
 }
 
 p {
-  color: var(--bread);
+  color: var(--color-text-body);
   font-family: Inter, system-ui, sans-serif;
   line-height: 1.6;
   margin: 0 0 1rem 0;
 }
 
-/* Responsiva media queries — använd viewport width istället för device-width */
+@media only screen and (max-width: 1024px) {
+  .main-content {
+    padding: 0vh 5vh 0vh 5vh;
+  }
+}
 @media only screen and (max-width: 768px) {
-  /* undvik att sätta body height till 200vh — det skapar problem */
   .main-content {
     padding-bottom: 4rem;
-  } /* luft i botten istället */
+  }
 }
