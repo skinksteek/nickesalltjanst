@@ -1,7 +1,7 @@
 import "../assets/styles/navbar.css";
 import "../assets/styles/styles.css";
 import { useEffect, useState } from "react";
-import new_logo from "/public/images/new_logo.png";
+import new_logo from "/src/images/new_logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,6 +31,11 @@ export default function Navbar() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("no-scroll", open);
+    return () => document.documentElement.classList.remove("no-scroll");
+  }, [open]);
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
