@@ -8,7 +8,10 @@ import { CardActionArea } from "@mui/material";
 export default function Cards({ item }) {
   return (
     <div>
-      <Card sx={{ Width: 500 }} style={{ backgroundColor: "var(--secondary)" }}>
+      <Card
+        sx={{ Width: 500 }}
+        style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      >
         <CardActionArea disableRipple style={{ cursor: "default" }}>
           <CardMedia
             component="img"
@@ -16,16 +19,16 @@ export default function Cards({ item }) {
             image={item.image}
             alt={item.title}
           />
-          <CardContent style={{ backgroundColor: "var(--secondary)" }}>
+          <CardContent style={{ backgroundColor: "var(--color-bg-secondary)" }}>
             <Typography
               gutterBottom
               variant="h2"
               component="div"
-              color="var(--white)"
+              color="var(--color-text-heading)"
             >
               {item.title}
             </Typography>
-            <Typography variant="caption" color="var(--white)">
+            <Typography variant="caption" color="var(--color-text-heading)">
               {item.bread}
             </Typography>
           </CardContent>
