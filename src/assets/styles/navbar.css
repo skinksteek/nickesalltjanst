@@ -1,42 +1,56 @@
 :root {
-  --page-width: 1300px;
-  --nav-height: 56px;
-  --nav-border: rgba(255, 255, 255, 0.08);
-  /* Logo-skalning */
-  --logo-size: 44px; /* Bildens grundhöjd (ej layout) */
-  --logo-scale-scrolled: 0.7;
-  --logo-scale-desktop: 2;
-  --logo-size: 36px;
+  --nav-height: 100px;
 }
 
+/* ------------------------------
+   Header (sticky i desktop)
+------------------------------ */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  background-color: var(--color-bg-primary);
+  z-index: 1500;
 }
 
+/* ------------------------------
+   Tablet och ner: gör header fixed
+   + ge sidinnehållet topp-padding
+------------------------------ */
+@media (max-width: 1024px) {
+  .site-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding-inline: clamp(16px, 5vw, 24px);
+  }
+
+  body,
+  main {
+    padding-top: var(--nav-height);
+  }
+}
+
+/* ------------------------------
+   <nav> container
+------------------------------ */
 nav {
   width: 100%;
-  max-width: 1300px;
   height: var(--nav-height);
   overflow: visible;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-bottom: 1px solid transparent; */
-  transition: background 0.25s ease, border-color 0.25s ease,
-    box-shadow 0.25s ease;
-  margin: 0 auto;
+  /* transition: background 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease; */
+  margin: 0; /* ta bort 1.5vh som kunde orsaka overflow */
 }
 
-.site-header.is-scrolled nav {
-  background: hsla(60, 8%, 10%, 0.85);
-  border-bottom-color: var(--nav-border);
-  backdrop-filter: saturate(140%) blur(8px);
-}
-
+/* ------------------------------
+   Inre rad i navigationen
+------------------------------ */
 .nav-content {
   width: 100%;
+  max-width: var(--page-width);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -44,50 +58,74 @@ nav {
     sans-serif;
   font-weight: 600;
 }
+
+/* ------------------------------
+   Mobiljusteringar av nav-layout
+------------------------------ */
 @media (max-width: 768px) {
   .nav-content {
     justify-content: space-between;
   }
+
   nav {
-    margin-top: 4px;
+    padding-top: 4px;
   }
 }
 
-/* ── Logo (skalas utan att påverka layout) ─ */
+/* =============================================================================
+   LOGO
+============================================================================= */
+
+/* ------------------------------
+   Logo-wrapper (vertikal centrering)
+------------------------------ */
 .nav-logo {
   height: var(--nav-height);
   display: flex;
   align-items: center;
 }
 
+/* ------------------------------
+   Logo-bilden (grundstorlek + transitions)
+------------------------------ */
 .nav-logo img {
-  height: var(--logo-size);
+  height: 80px;
   width: auto;
   display: block;
   transform-origin: left center;
-  transition: transform 0.22s ease;
+  transition: transform 0.22s ease, filter 0.22s ease;
   will-change: transform;
 }
 
-/* Scroll: skala bilden (ingen layout-hop) + lätt skugga */
+/* ------------------------------
+   Scroll-effekt på logo (liten nedskalning)
+------------------------------ */
 .site-header.is-scrolled .nav-logo img {
-  margin-top: 5px;
-  transform: scale(var(--logo-scale-scrolled));
+  transform: scale(0.8);
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55));
 }
 
-/* Desktop: förstora loggan utan att ändra nav-höjden */
+/* ------------------------------
+   Desktop: neutralisera bas-transform,
+   behåll scroll-effekten
+------------------------------ */
 @media (min-width: 1024px) {
   .nav-logo img {
-    transform: scale(var(--logo-scale-desktop));
+    transform: none;
   }
+
   .site-header.is-scrolled .nav-logo img {
-    transform: scale(
-      calc(var(--logo-scale-desktop) * var(--logo-scale-scrolled))
-    );
+    transform: scale(0.8);
   }
 }
 
+/* =============================================================================
+   LÄNKAR / CTA
+============================================================================= */
+
+/* ------------------------------
+   Nav-listan (desktop-rad, off-canvas-basen)
+------------------------------ */
 #navbar {
   display: flex;
   align-items: center;
@@ -97,21 +135,26 @@ nav {
   contain: paint;
   will-change: transform;
   overscroll-behavior: contain;
+  border-radius: 12px 0 0 12px;
 }
-#navbar.active {
-  transform: translateX(0);
-}
+
+/* ------------------------------
+   Listobjekt
+------------------------------ */
 #navbar li {
   list-style: none;
   position: relative;
 }
 
+/* ------------------------------
+   Länkutseende
+------------------------------ */
 #navbar a {
   position: relative;
   display: inline-block;
   padding: 8px 10px;
   border-radius: 10px;
-  color: var(--white);
+  color: var(--color-text-heading);
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
@@ -120,10 +163,12 @@ nav {
 }
 
 #navbar a:hover {
-  color: var(--yellow);
+  color: var(--color-accent);
 }
 
-/* Mjuk underline (även för aktiv länk) */
+/* ------------------------------
+   Mjuk underline-effekt (hover/aktiv)
+------------------------------ */
 #navbar a.hover-underline::after {
   content: "";
   position: absolute;
@@ -132,7 +177,7 @@ nav {
   bottom: 4px;
   height: 2px;
   border-radius: 999px;
-  background: var(--yellow);
+  background: var(--color-accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
@@ -143,10 +188,10 @@ nav {
   transform: scaleX(1);
 }
 
+/* ------------------------------
+   Primär CTA-knapp
+------------------------------ */
 .cta {
-  /* Faller tillbaka till --primary eller en mörk färg om --main saknas */
-  --cta-main: var(--main, var(--primary, #1a1a16));
-
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -154,13 +199,12 @@ nav {
   padding: 8px 12px;
   border-radius: 999px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  /* Underst gult, överst huvudfärgen som startar med 0% bredd */
-  background-image: linear-gradient(to right, var(--cta-main) 0 0),
-    linear-gradient(to right, var(--yellow) 0 0);
+  background-image: linear-gradient(to right, var(--color-bg-primary) 0 0),
+    linear-gradient(to right, var(--color-accent) 0 0);
   background-size: 0% 100%, 100% 100%;
   background-position: left, left;
   background-repeat: no-repeat;
-  color: var(--main);
+  color: var(--color-bg-primary);
   font-weight: 700;
   font-size: 14px;
   transition: background-size 0.35s ease, color 0.2s ease, transform 0.15s ease,
@@ -169,7 +213,7 @@ nav {
 
 .cta:hover {
   background-size: 100% 100%, 100% 100%;
-  color: var(--yellow);
+  color: var(--color-accent);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -178,30 +222,39 @@ nav {
 }
 
 .cta:focus-visible {
-  outline: 2px solid var(--yellow);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Ikoner följer textfärg */
+/* ------------------------------
+   CTA – ikoner följer textfärg
+------------------------------ */
 .cta svg,
 .cta i {
   color: currentColor;
 }
+
 .cta svg path {
   fill: currentColor;
   stroke: currentColor;
 }
 
-/* Desktop-CTA till höger om menyn (göms på mobil) */
+/* ------------------------------
+   CTA-placering (desktop/mobil)
+------------------------------ */
 .cta-desktop {
   display: none !important;
   margin-left: 12px;
 }
+
 .cta-mobile {
   display: none !important;
   width: 100%;
 }
 
+/* ------------------------------
+   Hamburgarknapp (mobil)
+------------------------------ */
 #mobile {
   display: none;
   margin-left: 8px;
@@ -211,23 +264,28 @@ nav {
   background: transparent;
   border: 0;
   padding: 8px;
-  color: var(--white);
+  color: var(--color-text-heading);
   border-radius: 10px;
 }
 
 #mobile button:focus-visible {
-  outline: 2px solid var(--yellow);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* ── Mobil: drawer + overlay ───────────── */
+/* =============================================================================
+   MOBIL: Drawer + Overlay
+============================================================================= */
 @media (max-width: 768px) {
+  /* CTA-vy i mobil */
   .cta-desktop {
     display: none !important;
   }
+
   .cta-mobile {
     display: block !important;
   }
+
   #navbar .cta {
     display: inline-flex !important;
     width: calc(100% - 24px);
@@ -235,89 +293,117 @@ nav {
     justify-content: center;
   }
 
+  /* Visa hamburgaren */
   #mobile {
     display: block;
   }
 
+  /* Drawer (stängt läge som utgångspunkt) */
   #navbar {
     position: fixed;
-    inset: 56px 0 0 auto; /* under nav */
-    width: 68%;
-    max-width: 360px;
-    height: calc(100vh - 56px);
+    top: var(--nav-height);
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(68%, 360px);
+    height: calc(100dvh - var(--nav-height));
     flex-direction: column;
     align-items: flex-start;
     padding: 20px 14px;
     gap: 12px;
-    background: var(--secondary);
+    background: var(--color-bg-secondary);
     border-left: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.35);
+    box-shadow: none;
+    margin: 0;
+
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1001;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, box-shadow 0.2s ease,
+      visibility 0s linear 0.3s;
+    z-index: 1200;
+    overscroll-behavior: contain;
   }
 
+  /* Drawer (öppen) */
   #navbar.active {
     transform: translateX(0);
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.35);
+    visibility: visible; /* visas direkt när den öppnas */
+    pointer-events: auto;
+    transition: transform 0.3s ease, box-shadow 0.2s ease,
+      visibility 0s linear 0s;
   }
+
+  /* Förhindra scroll på body när menyn är öppen (tillämpas via klass) */
   .no-scroll {
     overflow: hidden;
   }
 
+  /* Overlay (stängt) */
   .mobile-overlay {
     position: fixed;
-    inset: 56px 0 0 0;
+    top: var(--nav-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(2px);
     opacity: 0;
+    visibility: hidden; /* också fördröjd gömning */
     pointer-events: none;
-    transition: opacity 0.25s ease;
-    z-index: 1000;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+    z-index: 1100;
   }
 
+  /* Overlay (öppen) */
   .mobile-overlay.show {
     opacity: 1;
+    visibility: visible; /* visas direkt */
     pointer-events: auto;
+    transition: opacity 0.25s ease, visibility 0s linear 0s;
   }
 
-  /* CTA inuti menyn på mobil */
-  .cta-mobile {
-    display: block;
-  }
-  #navbar .cta {
-    width: calc(100% - 24px);
-    margin: 6px 12px 0;
-    justify-content: center;
+  /* Mobil: håll logohöjden i synk */
+  .nav-logo img {
+    height: 80px; /* samma som ovan */
   }
 }
 
-/* ── Tablet/desktop: visa CTA till höger ─ */
+/* =============================================================================
+   TABLET/DESKTOP: CTA-placering
+============================================================================= */
 @media (min-width: 769px) {
   .cta-desktop {
     display: inline-flex !important;
   }
+
   #navbar .cta {
     display: none !important;
   }
 }
 
-/* ── Reduced motion ── */
+/* =============================================================================
+   ACCESSIBILITY / PREFERENSER
+============================================================================= */
+
+/* Mindre rörelse för användare som föredrar det */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
   }
 }
+
+/* Pekskärm utan hover: gör CTA statisk och fullt färgfylld */
 @media (hover: none) and (pointer: coarse) {
   .cta {
-    background-image: linear-gradient(to right, var(--yellow) 0 0) !important;
+    background-image: linear-gradient(
+      to right,
+      var(--color-accent) 0 0
+    ) !important;
     background-size: 100% 100% !important;
     color: #111 !important;
     transform: none !important;
     box-shadow: none !important;
-  }
-}
-@media (max-width: 768px) {
-  .nav-logo img {
-    height: 64px;
   }
 }
