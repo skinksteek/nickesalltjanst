@@ -1,6 +1,6 @@
 .details-wrapper {
   text-align: center;
-  background-color: var(--secondary);
+  background-color: var(--color-bg-secondary);
   margin-right: 5vh;
   padding: 20px;
   -webkit-border-radius: 20px;
@@ -12,21 +12,12 @@
   flex-direction: column;
 }
 
-.phone {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bread);
-  p {
-    margin-left: 1vh;
-  }
-}
-
+.phone,
 .email {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--bread);
+  color: var(--color-text-body);
+  gap: 1vh;
   p {
     margin-left: 1vh;
   }
@@ -38,7 +29,7 @@
   justify-content: space-around;
   margin: 0 auto;
   padding-top: 5vh;
-  color: var(--bread);
+  color: var(--color-text-body);
 }
 
 #facebook,
@@ -48,11 +39,11 @@
 }
 #phone-icon:hover {
   transform: scale(1.1);
-  color: var(--yellow);
+  color: var(--color-accent);
 }
 #email-icon:hover {
   transform: scale(1.1);
-  color: var(--yellow);
+  color: var(--color-accent);
 }
 #facebook:hover {
   color: #4267b2;

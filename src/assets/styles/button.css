@@ -16,11 +16,11 @@ a {
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  color: var(--main);
+  color: var(--color-bg-primary);
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-image: linear-gradient(to right, var(--main) 0 0),
-    linear-gradient(to right, var(--yellow) 0 0);
+  background-image: linear-gradient(to right, var(--color-bg-primary) 0 0),
+    linear-gradient(to right, var(--color-accent) 0 0);
   background-size: 0% 100%, 100% 100%;
   background-position: left, left;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@ a {
 }
 .button:hover {
   background-size: 100% 100%, 100% 100%;
-  color: var(--yellow);
+  color: var(--color-accent);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

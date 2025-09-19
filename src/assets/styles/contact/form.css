@@ -31,10 +31,10 @@ form .button-holder {
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid var(--verylightgrey);
+  border-bottom: 2px solid var(--color-border);
   outline: 0;
   font-size: 16px;
-  color: var(--bread);
+  color: var(--color-text-body);
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -54,14 +54,18 @@ form .button-holder {
   top: 0;
   display: block;
   transition: 0.2s;
-  color: var(--verylightgrey);
+  color: var(--color-border);
 }
 
 .form__field:focus {
   padding-bottom: 6px;
   font-weight: 400;
   border-width: 3px;
-  border-image: linear-gradient(to right, var(--yellow), var(--yellow));
+  border-image: linear-gradient(
+    to right,
+    var(--color-accent),
+    var(--color-accent)
+  );
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -69,24 +73,23 @@ form .button-holder {
   top: 0;
   display: block;
   transition: 0.2s;
-  color: var(--yellow);
+  color: var(--color-accent);
   font-weight: 500;
 }
 
 /* === Autofill fix (Chrome/Safari) === */
 .form__field:-webkit-autofill {
-  -webkit-text-fill-color: var(--bread);
-  caret-color: var(--bread);
-  /* byt var(--mainbg) till din faktiska bakgrundsfärg-variabel */
-  box-shadow: 0 0 0 1000px var(--main) inset;
-  border-color: var(--verylightgrey);
+  -webkit-text-fill-color: var(--color-text-body);
+  caret-color: var(--color-text-body);
+  box-shadow: 0 0 0 1000px var(----color-bg-primary) inset;
+  border-color: var(--color-border);
   transition: background-color 5000s ease-in-out 0s;
 }
 
 .form__field:-webkit-autofill:focus {
-  box-shadow: 0 0 0 1000px var(--mainbg) inset,
+  box-shadow: 0 0 0 1000px var(----color-bg-primary) inset,
     0 0 0 3px rgba(245, 158, 11, 0.25);
-  -webkit-text-fill-color: var(--bread);
+  -webkit-text-fill-color: var(--color-text-body);
 }
 
 .form__field:required,
@@ -110,13 +113,13 @@ select {
   font-size: 1rem;
   padding: 0.675em 6em 0.675em 0.3125em;
   background: transparent;
-  border: 1px solid var(--verylightgrey);
+  border: 1px solid var(--color-border);
   border-radius: 0.25rem;
-  color: var(--verylightgrey);
+  color: var(--color-border);
   cursor: pointer;
 
   .option-color {
-    color: var(--main);
+    color: var(----color-bg-primary);
   }
 }
 
@@ -132,20 +135,20 @@ select {
 .custom-select::before {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid var(--verylightgrey);
+  border-bottom: var(--size) solid var(--color-border);
   top: 40%;
 }
 
 .custom-select::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-top: var(--size) solid var(--verylightgrey);
+  border-top: var(--size) solid var(--color-border);
   top: 55%;
 }
 
 textarea {
   font: inherit;
-  border-color: var(--verylightgrey);
+  border-color: var(--color-border);
   margin-top: 2vh;
   background: transparent;
   width: 100%;
@@ -154,10 +157,10 @@ textarea {
   box-sizing: border-box;
   border-radius: 5px;
   resize: vertical;
-  color: var(--white);
+  color: var(--color-text-heading);
 
   &::placeholder {
-    color: var(--verylightgrey);
+    color: var(--color-border);
   }
 }
 .error-message {

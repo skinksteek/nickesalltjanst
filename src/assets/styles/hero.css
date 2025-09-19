@@ -8,7 +8,6 @@
     -moz-border-radius: 5px 5px 5px 5px;
   }
   h1 {
-    color: var(--header);
     text-transform: none;
     letter-spacing: 0;
     font-size: 60px;
@@ -21,7 +20,7 @@
     display: block;
     height: 5px;
     width: 60px;
-    background: var(--yellow);
+    background: var(--color-accent);
     margin: 10px 0 0 0;
   }
   p {
@@ -30,7 +29,6 @@
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
-    color: var(--bread);
   }
 
   @media screen and (max-width: 600px) {
@@ -44,6 +42,6 @@
   margin-top: 5vh;
   border: 0;
   height: 1px;
-  background: var(--yellow);
-  background-image: linear-gradient(var(--yellow));
+  background: var(--color-accent);
+  background-image: linear-gradient(var(--color-accent));
 }
