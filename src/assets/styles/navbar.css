@@ -23,10 +23,17 @@
     right: 0;
     padding-inline: clamp(16px, 5vw, 24px);
   }
-
+}
+@media (max-width: 768px) {
   body,
   main {
-    padding-top: var(--nav-height);
+    padding-top: 12vh;
+  }
+}
+@media (max-width: 425px) {
+  body,
+  main {
+    padding-top: 15vh;
   }
 }
 
@@ -68,7 +75,9 @@ nav {
   }
 
   nav {
-    padding-top: 4px;
+    height: 60px;
+    padding-top: 8px;
+    padding-bottom: 2px;
   }
 }
 
@@ -207,14 +216,16 @@ nav {
   color: var(--color-bg-primary);
   font-weight: 700;
   font-size: 14px;
-  transition: background-size 0.35s ease, color 0.2s ease, transform 0.15s ease,
+  transition: background-size 0.4s ease, color 0.3s ease, transform 1.5s ease,
     box-shadow 0.2s ease;
+  border: 1px solid;
 }
 
 .cta:hover {
   background-size: 100% 100%, 100% 100%;
   color: var(--color-accent);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-color: var(--color-accent);
 }
 
 .cta:active {
@@ -366,7 +377,7 @@ nav {
 
   /* Mobil: håll logohöjden i synk */
   .nav-logo img {
-    height: 80px; /* samma som ovan */
+    height: 65px; /* samma som ovan */
   }
 }
 
