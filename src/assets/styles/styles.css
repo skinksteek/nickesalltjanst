@@ -34,6 +34,9 @@ body {
   background-color: var(--color-bg-primary);
   min-height: 100vh;
   line-height: 1.5;
+
+  /* FLUID BODY-TEXT (≈16–17px) */
+  font-size: clamp(1rem, 0.98rem + 0.2vw, 1.0625rem);
 }
 
 .main-content {
@@ -51,16 +54,29 @@ h2 {
   margin: 0 0 0.5rem 0;
 }
 
+/* FLUID RUBRIKER – små, mjuka spann nära standardstorlekar */
+h1 {
+  /* runt ~32px på normal desktop, skalar svagt 32→36 */
+  font-size: clamp(2rem, 1.9rem + 0.5vw, 2.25rem);
+}
+
+h2 {
+  /* runt ~24px på normal desktop, skalar svagt 24→28 */
+  font-size: clamp(1.5rem, 1.45rem + 0.25vw, 1.75rem);
+}
+
 p {
   color: var(--color-text-body);
   font-family: Inter, system-ui, sans-serif;
   line-height: 1.6;
   margin: 0 0 1rem 0;
+  /* ärver body-storleken (clamp) */
+  font-size: inherit;
 }
 
 @media only screen and (max-width: 1024px) {
   .main-content {
-    padding: 0vh 5vh 0vh 5vh;
+    padding: 0vh 0vh 0vh 4vh;
   }
 }
 @media only screen and (max-width: 768px) {
