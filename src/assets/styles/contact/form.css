@@ -9,13 +9,15 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-form {
-  margin-left: 5vh;
-  padding: 20px;
+.contact__form {
+  padding: 0 15px 15px 15px;
   color-scheme: dark;
+  background-color: var(--color-bg-secondary);
+  border-radius: 20px;
 }
-form .button-holder {
-  margin-top: 5vh;
+.contact__form .contact__actions {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   display: flex;
   justify-content: center;
 }
@@ -102,7 +104,7 @@ form .button-holder {
 }
 
 .custom-select {
-  min-width: 350px;
+  width: 100%;
   position: relative;
 }
 
@@ -169,12 +171,6 @@ textarea {
   margin-top: 5px;
 }
 
-@media screen and (max-width: 950px) {
-  form {
-    margin: 0;
-  }
-}
-
 @keyframes shake {
   0%,
   100% {
@@ -201,4 +197,19 @@ textarea {
 
 .error-border {
   border-color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__form {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .contact__form {
+    width: 300px;
+  }
+  textarea {
+    height: 200px;
+  }
 }
