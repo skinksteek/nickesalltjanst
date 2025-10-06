@@ -1,63 +1,67 @@
-/* eslint-disable no-undef */
 import "../assets/styles/footer.css";
+import logo from "/src/images/new_logo.png";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer-content">
-        <div className="footer-info footer-50">
-          <p>
-            <strong>Vår vision</strong>
+    <footer className="footer" role="contentinfo">
+      <div className="footer__inner">
+        <section className="footer__logoSection">
+          <a
+            href="/"
+            className="footer__logoLink"
+            aria-label="Gå till startsidan"
+          >
+            <img
+              className="footer__logo"
+              src={logo}
+              alt="Nickes Alltjänst AB"
+            />
+          </a>
+        </section>
+        <section className="footer__brand" aria-labelledby="footer-brand-title">
+          <h2 id="footer-brand-title" className="footer__title">
+            Det här erbjuder vi
+          </h2>
+          <p className="footer__description">
+            Vi erbjuder ett brett utbud av tjänster inom mark- och byggarbeten –
+            allt från vatten och avlopp, dränering och plattsättning till
+            plantering och borttagning av häckar och buskar. Vi hjälper även
+            till med mindre husgrunder, grus- och krantransporter, skräp- och
+            riscontainer, samt bilreparationer, däckförsäljning och olika
+            snickeri- och byggprojekt.
           </p>
-          <p>
-            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industrys standard dummy text ever since the 1500s, when an unknown
-            printer
-          </p>
-        </div>
-        <div className="footer-contact footer-25">
-          <p>
-            <strong>Kontakta oss</strong>
-          </p>
-          <p>
-            Nickesalltjänst AB
-            <br></br>
-            Kyrkogatan 12
-            <br></br>
-            688 30 Storfors
-            <br></br>
+        </section>
+        <section
+          className="footer__contact"
+          aria-labelledby="footer-contact-title"
+        >
+          <h2 className="footer__title">Nickes Alltjänst AB</h2>
+          <address className="footer__address">
             <p>
-              +46 76-327 71 17
-              <br></br>
-              alltjanstnicke@hotmail.com
+              Kyrkogatan 12
+              <br />
+              688 30 Storfors
             </p>
-          </p>
-        </div>
-        <div className="footer-follow footer-25">
-          <ul>
             <p>
-              <strong>Följ oss</strong>
-            </p>
-            <li>
-              <a href="#">LinkedIn</a>
-            </li>
-            <br></br>
-            <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=100076329215498"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook
+              Tel:{" "}
+              <a href="tel:+46763277117" className="footer__link">
+                +46 76-327 71 17
               </a>
-            </li>
-            <br></br>
-            <li>
-              <a href="#">Instagram</a>
-            </li>
-          </ul>
-        </div>
+            </p>
+            <p>
+              E-post:{" "}
+              <a href="mailto:info@nickesalltjanst.se" className="footer__link">
+                info@nickesalltjanst.se
+              </a>
+            </p>
+          </address>
+        </section>
+      </div>
+
+      <div className="footer__bottom">
+        <small className="footer__copyright">
+          © {new Date().getFullYear()} Nickes Alltjänst AB
+        </small>
       </div>
     </footer>
   );
