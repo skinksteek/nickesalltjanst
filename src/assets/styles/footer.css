@@ -5,29 +5,27 @@
 }
 
 .footer__inner {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
   max-width: var(--page-width);
-  padding: 2rem 1rem;
+  padding: 2rem 0rem;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
 /* --- Sektioner --- */
-.footer__logoSection {
-  flex: 0 0 auto;
-}
-
-.footer__brand {
-  flex: 1 1 360px; /* text kan ta plats men ligger nära loggan */
-  min-width: 260px;
+.footer__leftSection {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .footer__contact {
-  flex: 0 0 auto;
   margin-left: auto;
-  min-width: 220px;
+}
+
+.footer__brand {
+  min-width: 300px;
 }
 
 .footer__logo {
@@ -79,11 +77,31 @@
   opacity: 0.7;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 768px) {
   .footer__inner {
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-right: 3vh;
+    margin-left: 3vh;
   }
+  .footer__leftSection {
+    flex-direction: row;
+  }
+  .footer__contact {
+    margin: 0;
+  }
+}
+@media (max-width: 425px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .footer__contact {
+    margin-left: 1rem;
+  }
+
   .footer__logo {
-    max-width: 160px;
+    display: none;
   }
 }

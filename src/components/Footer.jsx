@@ -5,31 +5,33 @@ const Footer = () => {
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer__inner">
-        <section className="footer__logoSection">
-          <a
-            href="/"
-            className="footer__logoLink"
-            aria-label="Gå till startsidan"
-          >
-            <img
-              className="footer__logo"
-              src={logo}
-              alt="Nickes Alltjänst AB"
-            />
-          </a>
-        </section>
-        <section className="footer__brand" aria-labelledby="footer-brand-title">
-          <h2 id="footer-brand-title" className="footer__title">
-            Det här erbjuder vi
-          </h2>
-          <p className="footer__description">
-            Vi erbjuder ett brett utbud av tjänster inom mark- och byggarbeten –
-            allt från vatten och avlopp, dränering och plattsättning till
-            plantering och borttagning av häckar och buskar. Vi hjälper även
-            till med mindre husgrunder, grus- och krantransporter, skräp- och
-            riscontainer, samt bilreparationer, däckförsäljning och olika
-            snickeri- och byggprojekt.
-          </p>
+        <section className="footer__leftSection">
+          <div className="footer__logoSection">
+            <a
+              href="/"
+              className="footer__logoLink"
+              aria-label="Gå till startsidan"
+            >
+              <img
+                className="footer__logo"
+                src={logo}
+                alt="Nickes Alltjänst AB"
+              />
+            </a>
+          </div>
+          <div className="footer__brand" aria-labelledby="footer-brand-title">
+            <h2 id="footer-brand-title" className="footer__title">
+              Det här är Nickesalltjänst
+            </h2>
+            <p className="footer__description">
+              Vi erbjuder ett brett utbud av tjänster inom mark- och byggarbeten
+              – allt från vatten och avlopp, dränering och plattsättning till
+              plantering och borttagning av häckar och buskar. Vi hjälper även
+              till med mindre husgrunder, grus- och krantransporter, skräp- och
+              riscontainer, samt bilreparationer, däckförsäljning och olika
+              snickeri- och byggprojekt.
+            </p>
+          </div>
         </section>
         <section
           className="footer__contact"
