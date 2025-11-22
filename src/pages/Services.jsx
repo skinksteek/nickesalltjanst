@@ -1,17 +1,35 @@
-import Hero from "../components/Hero";
-import Cards from "../components/Cards";
-import { data } from "../assets/json/data";
-import "../assets/styles/services.css";
-
-export default function Services() {
+import "/src/assets/styles/services.css";
+import { data } from "/src/assets/json/data.js";
+import { ScrollSection } from "../components/ScrollSection.jsx";
+import Button from "../components/Button";
+const Services = () => {
   return (
-    <div>
-      <Hero text="Våra tjänster" />
-      <div className="card-grid">
-        {data.map((item) => (
-          <Cards key={item.id} item={item} />
+    <section className="services-container">
+      <h2 className="services-heading">
+        Vi erbjuder en stor variation av tjänster!
+      </h2>
+
+      <div className="sections">
+        {data.map((data, index) => (
+          <ScrollSection
+            key={data.id}
+            title={data.title}
+            bread={data.bread}
+            image={data.image}
+            reverse={index % 2 === 1}
+          />
         ))}
       </div>
-    </div>
+
+      <div className="services-contact">
+        <h2>Tveka inte att höra av dig om vi kan stå till tjänst!</h2>
+        <Button
+          text="Kontakta oss"
+          href="/kontakt"
+          onClick={() => navigate("/kontakt")}
+        />
+      </div>
+    </section>
   );
-}
+};
+export default Services;
