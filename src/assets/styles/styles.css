@@ -38,11 +38,11 @@ body {
   /* FLUID BODY-TEXT (≈16–17px) */
   font-size: clamp(1rem, 0.98rem + 0.2vw, 1.0625rem);
 }
-
 .main-content {
   max-width: var(--page-width);
   margin: 1vh auto 0;
   overflow-x: hidden;
+  min-height: 80vh;
 }
 
 /* Typografi */
