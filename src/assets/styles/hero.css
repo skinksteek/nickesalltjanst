@@ -4,7 +4,9 @@
 
 .hero-container img {
   width: 100%;
-  border-radius: 5px;
+  aspect-ratio: 16 / 9;
+  height: 60vh;
+  object-fit: cover;
 }
 
 .hero-container h1 {
@@ -37,5 +39,13 @@
 @media screen and (max-width: 375px) {
   .hero-container h1 {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container img {
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 }
