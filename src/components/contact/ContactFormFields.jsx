@@ -121,6 +121,9 @@ export default function ContactFormFields({
             >
               Mindre snickeri och byggprojekt
             </option>
+            <option className="option-color" value="Annat">
+              Annat typ av jobb
+            </option>
           </select>
         </div>
 
