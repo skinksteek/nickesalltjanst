@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useInView(options = {}) {
+export function useInView({ once = true, ...options } = {}) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -13,8 +13,9 @@ export function useInView(options = {}) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setInView(true);
-            // Om du bara vill trigga en gång:
-            observer.unobserve(entry.target);
+            if (once) observer.unobserve(entry.target);
+          } else if (!once) {
+            setInView(false);
           }
         });
       },

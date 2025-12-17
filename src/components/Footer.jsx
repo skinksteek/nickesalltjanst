@@ -60,11 +60,11 @@ const Footer = () => {
         </section>
       </div>
 
-      <div className="footer__bottom">
+      {/* <div className="footer__bottom">
         <small className="footer__copyright">
           © {new Date().getFullYear()} Nickes Alltjänst AB
         </small>
-      </div>
+      </div> */}
     </footer>
   );
 };
