@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/styles/styles.css";
+import "./components/motion/motion.css";
 import Hem from "./pages/Hem";
 import Services from "./pages/Services";
 import Om from "./pages/Om";
