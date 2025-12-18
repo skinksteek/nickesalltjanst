@@ -1,6 +1,5 @@
 import "../assets/styles/hem.css";
 import Hero from "../components/Hero";
-import Stagger from "../components/motion/Stagger.jsx";
 import ScaleIn from "../components/motion/ScaleIn.jsx";
 
 export default function Home() {
@@ -8,8 +7,6 @@ export default function Home() {
     <div>
       <ScaleIn>
         <Hero text="Allt mellan himmel och jord" />
-      </ScaleIn>
-      <Stagger>
         <div className="p-container">
           <p>
             What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
@@ -75,7 +72,7 @@ export default function Home() {
             injected humour, or non-characteristic words etc.
           </p>
         </div>
-      </Stagger>
+      </ScaleIn>
     </div>
   );
 }

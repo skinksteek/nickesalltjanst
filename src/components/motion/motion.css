@@ -44,6 +44,14 @@
   transform: scale(1);
 }
 
+@media (max-width: 768px) {
+  .scale-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .scale-in,
