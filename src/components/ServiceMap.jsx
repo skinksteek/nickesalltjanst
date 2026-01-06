@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css"; // Viktigt för Leaflet-stilar
 
 // Fix för Leaflet-ikoner i Vite
 delete L.Icon.Default.prototype._getIconUrl;
@@ -10,6 +11,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
+// Custom yellow marker
 const yellowMarkerIcon = L.divIcon({
   html: `
     <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
@@ -30,18 +32,21 @@ const yellowMarkerIcon = L.divIcon({
 
 export default function ServiceMap({ className }) {
   const storforsPosition = [59.53, 14.27];
+
   return (
     <MapContainer
       className={className}
-      center={[59.53, 14.27]}
+      center={storforsPosition}
       zoom={9}
       scrollWheelZoom={false}
     >
+      {/* OpenStreetMap tiles – fungerar utan API-key */}
       <TileLayer
-        attribution="© OpenStreetMap"
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
+      {/* Markers */}
       <Marker position={storforsPosition} icon={yellowMarkerIcon}>
         <Popup>Storfors</Popup>
       </Marker>
