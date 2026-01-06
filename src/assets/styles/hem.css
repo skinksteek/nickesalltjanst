@@ -1,3 +1,140 @@
-.p-container {
+.home-services {
+  max-width: var(--page-width);
   margin: 0 auto;
+  padding: 6rem 1.5rem; /* matchar hero-spacing */
+  display: grid;
+  gap: 4rem;
+}
+
+/* Intro */
+.home-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.home-intro h2 {
+  margin-bottom: 1rem;
+}
+
+/* Cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service-card {
+  max-height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.service-card img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.service-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+}
+
+.service-overlay h3 {
+  color: var(--color-text-heading);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.home-cta {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services {
+    padding: 4rem 1.5rem;
+  }
+  .service-card {
+    margin-right: 20vh;
+    margin-left: 20vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    margin-right: 5vh;
+    margin-left: 5vh;
+  }
+}
+
+.home-about {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-about {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-content {
+  flex: 1;
+}
+.about-content::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 60px;
+  background: var(--color-accent);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.about-map {
+  flex: 1;
+  width: 100%;
+}
+
+.service-map {
+  width: 100%;
+  height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.bottom-cta {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .home-about {
+    flex-direction: column;
+  }
+
+  .service-map {
+    height: 300px;
+    gap: 2rem;
+  }
 }

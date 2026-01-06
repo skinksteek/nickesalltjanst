@@ -1,78 +1,142 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Banner from "../components/Banner";
+import Button from "../components/Button";
 import "../assets/styles/hem.css";
-import Hero from "../components/Hero";
-import ScaleIn from "../components/motion/ScaleIn.jsx";
+import ServiceMap from "../components/ServiceMap";
+import { data } from "/src/assets/json/data.js";
+
+const featuredServices = data.filter((service) =>
+  [3, 5, 8].includes(service.id)
+);
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const servicesRef = useRef(null);
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Intro text
+      gsap.from(".home-intro > *", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      // Service cards
+      gsap.from(".service-card", {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+
+      // CTA under services
+      gsap.from(".home-services .home-cta", {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 70%",
+          once: true,
+        },
+      });
+
+      // About section
+      gsap.from(".home-about .about-content > *", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+      gsap.from(".about-map", {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div>
-      <ScaleIn>
-        <Hero text="Allt mellan himmel och jord" />
-        <div className="p-container">
-          <p>
-            What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industrys standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the
-            leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum.
-          </p>
+    <>
+      <Banner />
 
+      <section ref={servicesRef} className="home-services">
+        <div className="home-intro">
+          <h2 id="content">Det här är Nickesalltjänst</h2>
           <p>
-            Why do we use it? It is a long established fact that a reader will
-            be distracted by the readable content of a page when looking at its
-            layout. The point of using Lorem Ipsum is that it has a more-or-less
-            normal distribution of letters, as opposed to using Content here,
-            content here, making it look like readable English. Many desktop
-            publishing packages and web page editors now use Lorem Ipsum as
-            their default model text, and a search for lorem ipsum will uncover
-            many web sites still in their infancy. Various versions have evolved
-            over the years, sometimes by accident, sometimes on purpose
-            (injected humour and the like).
-          </p>
-
-          <p>
-            Where does it come from? Contrary to popular belief, Lorem Ipsum is
-            not simply random text. It has roots in a piece of classical Latin
-            literature from 45 BC, making it over 2000 years old. Richard
-            McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-            looked up one of the more obscure Latin words, consectetur, from a
-            Lorem Ipsum passage, and going through the cites of the word in
-            classical literature, discovered the undoubtable source. Lorem Ipsum
-            comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et
-            Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC.
-            This book is a treatise on the theory of ethics, very popular during
-            the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor
-            sit amet.., comes from a line in section 1.10.32.
-          </p>
-
-          <p>
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-            below for those interested. Sections 1.10.32 and 1.10.33 from de
-            Finibus Bonorum et Malorum by Cicero are also reproduced in their
-            exact original form, accompanied by English versions from the 1914
-            translation by H. Rackham.
-          </p>
-
-          <p>
-            Where can I get some? There are many variations of passages of Lorem
-            Ipsum available, but the majority have suffered alteration in some
-            form, by injected humour, or randomised words which dont look even
-            slightly believable. If you are going to use a passage of Lorem
-            Ipsum, you need to be sure there isnt anything embarrassing hidden
-            in the middle of text. All the Lorem Ipsum generators on the
-            Internet tend to repeat predefined chunks as necessary, making this
-            the first true generator on the Internet. It uses a dictionary of
-            over 200 Latin words, combined with a handful of model sentence
-            structures, to generate Lorem Ipsum which looks reasonable. The
-            generated Lorem Ipsum is therefore always free from repetition,
-            injected humour, or non-characteristic words etc.
+            Vi erbjuder ett brett utbud av tjänster,
+            <br />
+            en del av de tjänster är exempelvis
           </p>
         </div>
-      </ScaleIn>
-    </div>
+
+        <div className="services-grid">
+          {featuredServices.map((service) => (
+            <div className="service-card" key={service.id}>
+              <img src={service.image} alt={service.title} />
+              <div className="service-overlay">
+                <h3>{service.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="home-cta">
+          <Button text="Se alla tjänster" href="/tjanster" />
+        </div>
+      </section>
+
+      <section ref={aboutRef} className="home-about">
+        <div className="about-content">
+          <h2>Lokalt i Storfors, verksamma i hela regionen</h2>
+          <p>
+            Vi utgår från Storfors men arbetar även i omkringliggande områden
+            inom cirka fem mils radie. Det innebär att vi ofta har uppdrag i
+            bland annat Kristinehamn, Filipstad, Degerfors och Karlskoga.
+            Oavsett var uppdraget finns lägger vi samma noggrannhet och
+            engagemang i varje arbete.
+          </p>
+        </div>
+        <div className="about-map">
+          <ServiceMap className="service-map" />
+        </div>
+      </section>
+      <div className="bottom-cta">
+        <Button text="Läs mer om oss" href="/om" />
+      </div>
+    </>
   );
 }

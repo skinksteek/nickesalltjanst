@@ -25,7 +25,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 }
 
@@ -38,11 +38,13 @@ body {
   /* FLUID BODY-TEXT (≈16–17px) */
   font-size: clamp(1rem, 0.98rem + 0.2vw, 1.0625rem);
 }
-.main-content {
-  max-width: var(--page-width);
-  margin: 1vh auto 0;
+body,
+html {
   overflow-x: hidden;
+  max-width: var(--page-width);
   min-height: 80vh;
+  max-width: 100%;
+  scroll-behavior: smooth;
 }
 
 /* Typografi */
@@ -72,15 +74,4 @@ p {
   margin: 0 0 1rem 0;
   /* ärver body-storleken (clamp) */
   font-size: inherit;
-}
-
-@media only screen and (max-width: 1024px) {
-  .main-content {
-    padding: 0vh 2vh 0vh 2vh;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .main-content {
-    padding-bottom: 4rem;
-  }
 }
