@@ -20,7 +20,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="footer__brand" aria-labelledby="footer-brand-title">
-            <h2 id="footer-brand-title" className="footer__title">
+            {/* <h2 id="footer-brand-title" className="footer__title">
               Det här är Nickesalltjänst
             </h2>
             <p className="footer__description">
@@ -30,7 +30,7 @@ const Footer = () => {
               till med mindre husgrunder, grus- och krantransporter, skräp- och
               riscontainer, samt bilreparationer, däckförsäljning och olika
               snickeri- och byggprojekt.
-            </p>
+            </p> */}
           </div>
         </section>
         <section
