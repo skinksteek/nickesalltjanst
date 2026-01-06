@@ -10,26 +10,25 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SuccessPage from "./pages/MessageSuccess";
 import MessageFailed from "./pages/MessageFailed";
+import "leaflet/dist/leaflet.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main className="main-content">
-        <Routes>
-          <Route index element={<Hem />} />
-          <Route path="/hem" element={<Hem />} />
-          <Route path="/tjanster" element={<Services />} />
-          <Route path="/om" element={<Om />} />
-          <Route path="/kontakt" element={<Kontakt />} />
-          <Route path="/kontakt/skickat-meddelande" element={<SuccessPage />} />
-          <Route
-            path="/kontakt/meddelande-misslyckat"
-            element={<MessageFailed />}
-          />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route index element={<Hem />} />
+        <Route path="/hem" element={<Hem />} />
+        <Route path="/tjanster" element={<Services />} />
+        <Route path="/om" element={<Om />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/kontakt/skickat-meddelande" element={<SuccessPage />} />
+        <Route
+          path="/kontakt/meddelande-misslyckat"
+          element={<MessageFailed />}
+        />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   );
