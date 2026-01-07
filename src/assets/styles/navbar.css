@@ -2,13 +2,19 @@
   --nav-height: 76px;
   --nav-height-mobile: 60px;
 }
+body {
+  padding-top: var(--nav-height);
+}
 
 /* Header (desktop sticky) */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: var(--color-bg-primary);
+  left: 0;
+  right: 0;
   z-index: 1500;
+  background: var(--color-bg-primary);
+  height: var(--nav-height);
 }
 
 /* Nav-container */
@@ -48,9 +54,12 @@
   transform-origin: left center;
   transition: transform 0.22s ease, filter 0.22s ease;
   will-change: transform;
-  margin-top: 5px;
 }
-
+@media (max-width: 425px) {
+  .nav-logo img {
+    margin-top: 5px;
+  }
+}
 /* Liten logo-komprimering vid scroll */
 .site-header.is-scrolled .nav-logo img {
   transform: scale(0.8);
@@ -239,7 +248,7 @@
    - Fixed header + solid bakgrund
    - Drawer för menyn
 ========================================= */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .site-header {
     position: fixed;
     left: 0;
@@ -249,12 +258,17 @@
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
   }
 }
+@media (max-width: 1024px) {
+  .site-header {
+    padding-inline: clamp(16px, 5vw, 24px);
+  }
+}
 
 /* Layoutjusteringar för sidinnehåll vid liten skärm */
 @media (max-width: 768px) {
-  body,
-  main {
-    padding-top: 12vh;
+  .site-header {
+    height: var(--nav-height-mobile);
+    padding-inline: clamp(16px, 5vw, 24px);
   }
 
   .nav-content {
