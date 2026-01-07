@@ -106,7 +106,7 @@
 .about-content {
   flex: 1;
 }
-.about-content::after {
+.about-content p::after {
   content: "";
   display: block;
   height: 5px;
