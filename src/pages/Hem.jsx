@@ -129,14 +129,21 @@ export default function Home() {
             Oavsett var uppdraget finns lägger vi samma noggrannhet och
             engagemang i varje arbete.
           </p>
+          <div className="bottom-cta">
+            <Button text="Läs mer om oss" href="/om" />
+          </div>
         </div>
         <div className="about-map">
           <ServiceMap className="service-map" />
         </div>
       </section>
-      <div className="bottom-cta">
-        <Button text="Läs mer om oss" href="/om" />
-      </div>
+      <a href="/kontakt" class="contact-cta">
+        <span class="contact-text">
+          <strong>Behöver du hjälp eller offert?</strong>
+          <span> Hör av dig – vi svarar gärna.</span>
+        </span>
+        <span class="contact-icon">→</span>
+      </a>
     </>
   );
 }
