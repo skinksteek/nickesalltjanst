@@ -48,7 +48,7 @@
 }
 
 .scroll-section.is-visible .scroll-section__image {
-  transform: scale(1); /* Liten zoom-in effekt */
+  transform: scale(1);
 }
 
 .scroll-section__content h2 {
@@ -70,9 +70,10 @@
   margin-bottom: 1.5rem;
 }
 
-/* Mobil / tablet */
-
 @media (max-width: 768px) {
+  .services-heading {
+    font-size: 2rem;
+  }
   .scroll-section,
   .scroll-section.reverse {
     grid-template-columns: 1fr;
