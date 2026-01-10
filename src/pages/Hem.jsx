@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Banner from "../components/Banner";
@@ -6,6 +6,7 @@ import Button from "../components/Button";
 import "../assets/styles/hem.css";
 import ServiceMap from "../components/ServiceMap";
 import { data } from "/src/assets/json/data.js";
+import { useHomeAnimations } from "../hooks/useHomeAnimations";
 
 const featuredServices = data.filter((service) =>
   [3, 5, 8].includes(service.id)
@@ -17,77 +18,7 @@ export default function Home() {
   const servicesRef = useRef(null);
   const aboutRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Intro text
-      gsap.from(".home-intro > *", {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      });
-
-      // Service cards
-      gsap.from(".service-card", {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 75%",
-          once: true,
-        },
-      });
-
-      // CTA under services
-      gsap.from(".home-services .home-cta", {
-        y: 20,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 70%",
-          once: true,
-        },
-      });
-
-      // About section
-      gsap.from(".home-about .about-content > *", {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      });
-      gsap.from(".about-map", {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
+  useHomeAnimations(servicesRef, aboutRef);
 
   return (
     <>
