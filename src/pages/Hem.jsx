@@ -22,11 +22,11 @@ export default function Home() {
 
   return (
     <>
-      <Banner />
+      <Banner title="Allt mellan himmel och jord" showButton={true} />
 
       <section ref={servicesRef} className="home-services">
-        <div className="home-intro">
-          <h2 id="content">Det här är Nickesalltjänst</h2>
+        <div id="content" className="home-intro">
+          <h2>Det här är Nickesalltjänst</h2>
           <p>
             Vi erbjuder ett brett utbud av tjänster,
             <br />
