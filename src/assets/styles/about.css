@@ -81,3 +81,12 @@
   border-left: 3px solid var(--color-accent);
   padding-left: 15px;
 }
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: inline;
+  }
+}

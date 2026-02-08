@@ -56,14 +56,16 @@ export default function About() {
             Alltjänst växt, men hjärtat i verksamheten är exakt detsamma idag
             som för över tio år sedan. För oss spelar det ingen roll om det
             handlar om att serva en bil, gjuta en husgrund eller beskära en
-            häck. Det är helheten som driver oss. Vi vet att våra kunder
-            uppskattar att bara behöva ringa ett nummer, oavsett om de behöver
-            en grusleverans till Filipstad eller ett altanbygge i Karlskoga. Vi
-            är stolta över att utgå från Storfors, men vi ser hela närområdet
-            som vår arbetsplats. Med en radie på fem mil täcker vi in allt från
-            Kristinehamn till Degerfors. För mig handlar varje uppdrag om
-            förtroende – att lämna en plats lite bättre än vi fann den, och att
-            alltid stå för det hantverk vi levererar."
+            häck. <br className="mobile-only" />
+            Det är helheten som driver oss. Vi vet att våra kunder uppskattar
+            att bara behöva ringa ett nummer, oavsett om de behöver en
+            grusleverans till Filipstad eller ett altanbygge i Karlskoga. Vi är
+            stolta över att utgå från Storfors, men vi ser hela närområdet som
+            vår arbetsplats.
+            <br className="mobile-only" /> Med en radie på fem mil täcker vi in
+            allt från Kristinehamn till Degerfors. För mig handlar varje uppdrag
+            om förtroende – att lämna en plats lite bättre än vi fann den, och
+            att alltid stå för det hantverk vi levererar."
             <br />
             <strong className="signature">
               – Nicke, Grundare av Nickesalltjänst
