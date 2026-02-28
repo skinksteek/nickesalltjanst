@@ -42,7 +42,6 @@ export default function Navbar() {
       <nav>
         <div className="nav-content">
           <a id="logo" className="nav-logo" href="/">
-            {/* Din riktiga logo används här */}
             <img
               src={new_logo}
               alt="Nickes Alltjänst"

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
 
-  background: url("/public/images/bil-cropped.jpeg") no-repeat center / cover;
+  background: url("/public/images/bil-cropped.webp") no-repeat center / cover;
 }
 .banner,
 .banner__container {

@@ -103,6 +103,11 @@ body {
   color: var(--color-accent);
 }
 
+#navbar a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* Mjuk underline (hover/aktiv) */
 #navbar a.hover-underline::after {
   content: "";

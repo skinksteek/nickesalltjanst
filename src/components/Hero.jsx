@@ -1,5 +1,5 @@
 import "../assets/styles/hero.css";
-import bilCropped from "/public/images/bil-cropped.jpeg";
+import bilCropped from "/public/images/bil-cropped.webp";
 import PropTypes from "prop-types";
 
 const Hero = ({ text, bread }) => {
