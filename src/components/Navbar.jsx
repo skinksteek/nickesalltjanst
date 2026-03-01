@@ -1,7 +1,7 @@
 import "../assets/styles/navbar.css";
 import "../assets/styles/styles.css";
 import { useEffect, useState } from "react";
-import new_logo from "/src/images/new_logo.png";
+import new_logo from "/src/images/new_logo.svg";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
