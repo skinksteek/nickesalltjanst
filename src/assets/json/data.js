@@ -43,7 +43,7 @@ export const data = [
   },
   {
     id: 9,
-    image: "/images/reperation.jpeg",
+    image: "/images/reperation.webp",
     title: "Bilreparationer",
     bread:
       "Service och reparationer av person- och lätta lastbilar. Felkodsläsning, bromsar, avgassystem och övrigt underhåll.",
